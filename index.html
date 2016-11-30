@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
-		<script src="jquery.js"></script>
-		<script src="sorcery.js"></script>
+        <script src="jquery.js" type="application/javascript"></script>
+        <script src="sorcery.js" type="application/javascript"></script>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
 		<title>Sword & Sorcery</title>
@@ -18,8 +18,8 @@
 		<div class="section" id="intro">
 			<h2>Epic dungeon of the evil necromancer</h2>
 			En voila un jeu qu'il est bien.
-			
-			<action name="reset"/>
+
+            <action name="reset"></action>
 			
 			<button go="wakeUp">Commencer l'aventure !</button>
 		</div>
@@ -27,8 +27,8 @@
 		
 		<div class="section" id="wakeUp">
 			Vous ouvez les yeux... Tout est noir autour de vous...
-			
-			<action name="start"/>
+
+            <action name="start"></action>
 			
 			<button go="cavern">Se relever</button>
 		</div>
@@ -65,8 +65,8 @@
 			<p>Aie ! Vous perdez 1 point de vie...</p>
 			<p>Quelque chose tombe du plafond : une clé était cachée dans une
 			faille.</p>
-			
-			<action name="hit"/>
+
+            <action name="hit"></action>
 			
 			<button go="exit">Utiliser la clé et ouvrir la porte</button>
 		</div>
@@ -83,8 +83,8 @@
 		<div class="section" id="hitDoor">
 			BLAM ! La porte n'a pas bougé d'un poil. Par contre, votre épaule, elle, s'est enfoncée de quelques centimètres.
 			Vous perdez 1 point de vie.
-			
-			<action name="hit"/>
+
+            <action name="hit"></action>
 			
 			<button go="hitDoor">Ré-essayer !</button>
 			<button go="cavern">Retourner sur vos pas</button>
