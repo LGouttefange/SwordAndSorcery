@@ -73,3 +73,38 @@ h2 {
 	background-repeat: no-repeat;
 	background-image: url(img/moonmoon.png);
 }
+
+.section .interactions {
+	width: 100%;
+	display: table;
+	margin-top: 30px;
+}
+
+.section interaction {
+	display: table-cell;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+	background: lightGray;
+	border: 2px solid #eee;
+	cursor: pointer;
+	text-align: center;
+
+}
+
+.section interaction:hover {
+	color: lightGray;
+	background-color: black;
+}
+
+.section > .interactions > textarea {
+	width: 90%;
+	resize: none;
+	border: 5px solid #ccc;
+	margin: auto 5%;
+}
+
+.section > .interactions #compteur-mots {
+	font-weight: bold;
+	color: red;
+}

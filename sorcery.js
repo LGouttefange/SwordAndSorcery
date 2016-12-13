@@ -52,12 +52,14 @@ $(function () {
     var DEFAULT_LIFE = 3;
 
     var life;
-    var buttonsWithGo = $(".section button[go]");
-    var buttonsWithoutGo = $(".section button:not(button[go])");
+    var buttons = $('.section button')
+    var buttonsWithGo = buttons.filter("button[go]");
+    var buttonsWithoutGo = buttons.filter("button:not(button[go])");
     var status = $("#status");
     var currentSection = $(".section").first();
     var actionsHistory = [];
     var moonMoon = new MoonMoon();
+    var minNumberOfWordsForDescription = 300;
     var actions = {
         "hit": loseOneLife,
         "reset": resetGame,
@@ -77,15 +79,32 @@ $(function () {
     });
 
 
-    function gotoSection(key) {
+    $("#description").keydown(function () {
+        var numberOfWordsOfDescription = minNumberOfWordsForDescription - numberOfWords($(this).val());
+        $("#compteur-mots").text(numberOfWordsOfDescription)
+        if (numberOfWordsOfDescription <= 0)
+            $(this).closest('.section').find('button').removeAttr('disabled');
+        ;
+    });
+
+    function numberOfWords(str) {
+        return str.split(' ').length;
+    }
+
+    function changeSection(nextSection) {
         currentSection.hide();
-        currentSection = $("#" + key);
+        currentSection = nextSection;
         currentSection.show();
         currentSection.find("action").trigger("doAction");
     }
 
+    function gotoSection(key) {
+        var nextSection = $("#" + key);
+        changeSection(nextSection);
+    }
+
     function gotoNextSection() {
-        gotoSection(currentSection.next().attr('id'));
+        changeSection(currentSection.next());
     }
 
     function getLife() {
