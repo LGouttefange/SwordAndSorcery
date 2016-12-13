@@ -43,7 +43,10 @@
         Donne moi un descriptif de ton personnage (300 mots minimum).
     </section>
     <div class="interactions">
-        <textarea name="description" id="description" cols="30" rows="10">Racontez-moi votre histoire...</textarea>
+        <textarea name="description" id="description">Racontez-moi votre histoire...</textarea>
+        <div>
+            <interaction data-action="loadDescription">Créer une histoire pour moi</interaction>
+        </div>
         <p>Encore <span id="compteur-mots">300</span> mots !</p>
     </div>
     <button disabled>Se relever</button>
@@ -83,7 +86,6 @@
     <button go="doorLocked">Sortir</button>
     <button go="wait">Attendre</button>
 </div>
-
 
 <div class="section" id="wait">
     <section class="content">

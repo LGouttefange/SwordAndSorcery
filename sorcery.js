@@ -66,6 +66,9 @@ $(function () {
         "start": startGame
     };
 
+    var interactions = {
+        "loadDescription": loadDescription
+    };
 
     buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
@@ -79,13 +82,35 @@ $(function () {
     });
 
 
-    $("#description").keydown(function () {
-        var numberOfWordsOfDescription = minNumberOfWordsForDescription - numberOfWords($(this).val());
-        $("#compteur-mots").text(numberOfWordsOfDescription)
-        if (numberOfWordsOfDescription <= 0)
-            $(this).closest('.section').find('button').removeAttr('disabled');
-        ;
+    $(".section > action").on("doAction", function () {
+        actions[$(this).attr("name")]();
     });
+
+    $(".section interaction").click(function () {
+        interactions[$(this).data("action")]();
+    })
+
+
+    function updateWordCountOfDescription() {
+
+        var numberOfWordsOfDescription = minNumberOfWordsForDescription - numberOfWords($("#description").val());
+        $("#compteur-mots").text(numberOfWordsOfDescription);
+        if (numberOfWordsOfDescription <= 0)
+            $("#description").closest('.section').find('button').removeAttr('disabled');
+    }
+
+    $("#description").keydown(updateWordCountOfDescription);
+
+    function loadDescription() {
+
+        $(this).remove();
+
+        $("#description")
+            .attr("disabled", true)
+            .load("description", function () {
+                updateWordCountOfDescription();
+            });
+    }
 
     function numberOfWords(str) {
         return str.split(' ').length;
