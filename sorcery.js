@@ -52,7 +52,8 @@ $(function () {
     var DEFAULT_LIFE = 3;
 
     var life;
-    var buttons = $(".section button");
+    var buttonsWithGo = $(".section button[go]");
+    var buttonsWithoutGo = $(".section button:not(button[go])");
     var status = $("#status");
     var currentSection = $(".section").first();
     var actionsHistory = [];
@@ -63,32 +64,28 @@ $(function () {
         "start": startGame
     };
 
-    function initActionsList() {
-        actions["hit"] = loseOneLife;
-        actions["start"] = startGame;
-        actions["reset"] = resetGame;
-    }
 
-    initActionsList();
-
-
-    buttons.click(function () {
+    buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
+    });
+    buttonsWithoutGo.click(function () {
+        gotoNextSection();
     });
 
     $(".section > action").on("doAction", function () {
         actions[$(this).attr("name")]();
     });
-    $(".section > action[name='reset']").on("doAction", resetGame);
-    $(".section > action[name='start']").on("doAction", startGame);
 
 
     function gotoSection(key) {
         currentSection.hide();
         currentSection = $("#" + key);
-        actionsHistory.push(currentSection.contents().first().text().replace(/(\r\n|\n|\r)/gm, ""));
         currentSection.show();
         currentSection.find("action").trigger("doAction");
+    }
+
+    function gotoNextSection() {
+        gotoSection(currentSection.next().attr('id'));
     }
 
     function getLife() {
@@ -112,8 +109,8 @@ $(function () {
     }
 
     function startGame() {
-        displayLife();
         resetLife();
+        displayLife();
     }
 
     function resetGame() {
