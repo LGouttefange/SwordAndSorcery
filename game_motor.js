@@ -153,10 +153,12 @@ $(function () {
         $(this).remove();
 
         $("#description")
-            .attr("disabled", true)
-            .load("description", function () {
+            .attr("disabled", true);
+            $.ajax("description")
+            .done(function (texte) {
+                $("#description").val( texte );
                 updateWordCountOfDescription();
-            });
+            })
     }
 
     function numberOfWords(str) {
