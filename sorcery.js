@@ -1,7 +1,7 @@
 $(function () {
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
+    }
 
     class MoonMoon {
         constructor() {
@@ -72,9 +72,19 @@ $(function () {
 
     var interactions = {
         "loadDescription": loadDescription,
-        "setPlayerSexToMale": placeholder,
-        "setPlayerSexToFemale" : placeholder
+        "setPlayerSexToMale": setPlayerSexToMale,
+        "setPlayerSexToFemale" : setPlayerSexToFemale
     };
+
+    function setPlayerSexToMale(){
+        $("m").show();
+        $("f").hide();
+    }
+
+    function setPlayerSexToFemale(){
+        $("f").show();
+        $("m").hide();
+    }
 
     buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
@@ -186,6 +196,6 @@ $(function () {
 
 
     $(".section +.section").hide();
-
+    setPlayerSexToFemale();
 
 });
