@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="jquery.js" type="application/javascript"></script>
-    <script src="sorcery.js" type="application/javascript"></script>
+    <script src="game_motor.js" type="application/javascript"></script>
     <link type="text/css" rel="stylesheet" href="style.css"/>
     <meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
     <title>Sword & Sorcery</title>
@@ -39,12 +39,24 @@
     <button>Se relever</button>
 </div>
 
+
+<div class="section">
+    <section class="content">
+        Comment souhaitez-vous être appelé ?
+    </section>
+    <div class="interactions">
+        <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
+    </div>
+    <button>Je m'appelle <pseudo></pseudo></button>
+
+</div>
 <div class="section">
     <section class="content">
         Donne moi un descriptif de ton personnage (300 mots minimum).
     </section>
     <div class="interactions">
         <textarea name="description" id="description">Racontez-moi votre histoire...</textarea>
+
         <div>
             <interaction data-action="loadDescription">Créer une histoire pour moi</interaction>
         </div>
@@ -103,6 +115,7 @@
 <div class="section" id="hitWall">
     <section class="content">
         <p>Aie ! Vous perdez 1 point de vie...</p>
+
         <p>Quelque chose tombe du plafond : une clé était cachée dans une
             faille.</p>
 

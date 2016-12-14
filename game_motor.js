@@ -93,10 +93,11 @@ $(function () {
         gotoNextSection();
     });
 
-    $(".section > action").on("doAction", function () {
-        actions[$(this).attr("name")]();
-    });
+    function updatePseudo() {
+        $("pseudo").text( $("#input-pseudo").val() )
+    }
 
+    $("input#input-pseudo").keydown(updatePseudo);
 
     $(".section > action").on("doAction", function () {
         actions[$(this).attr("name")]();
@@ -197,5 +198,6 @@ $(function () {
 
     $(".section +.section").hide();
     setPlayerSexToFemale();
+    updatePseudo();
 
 });
