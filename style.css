@@ -109,3 +109,8 @@ h2 {
 	font-weight: bold;
 	color: red;
 }
+
+.section interaction.toggle.active{
+    background: #333;
+    color:white;
+}

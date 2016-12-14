@@ -1,7 +1,7 @@
 $(function () {
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    };
 
     class MoonMoon {
         constructor() {
@@ -66,8 +66,14 @@ $(function () {
         "start": startGame
     };
 
+    function placeholder(){
+        console.log('Function not implemented yet');
+    }
+
     var interactions = {
-        "loadDescription": loadDescription
+        "loadDescription": loadDescription,
+        "setPlayerSexToMale": placeholder,
+        "setPlayerSexToFemale" : placeholder
     };
 
     buttonsWithGo.click(function () {
@@ -90,6 +96,12 @@ $(function () {
         interactions[$(this).data("action")]();
     })
 
+    function toggleActiveInteraction() {
+        $(this).parent().children("interaction.toggle").removeClass("active");
+        $(this).addClass("active");
+    }
+
+    $(".section interaction.toggle").click(toggleActiveInteraction)
 
     function updateWordCountOfDescription() {
 
