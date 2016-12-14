@@ -117,3 +117,8 @@ h2 {
     background: #333;
     color:white;
 }
+
+.section .error{
+    color:red;
+    font-weight: bold;
+}

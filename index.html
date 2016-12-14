@@ -47,9 +47,26 @@
     <div class="interactions">
         <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
     </div>
-    <button>Je m'appelle <pseudo></pseudo></button>
-
+    <button>OK</button>
 </div>
+
+<div class="section">
+    <section class="content">
+        <p class="error">
+            Ce pseudo est déjà pris
+        </p>
+        <p>
+            Comment souhaitez-vous être appelé ?
+        </p>
+    </section>
+    <div class="interactions">
+        <input class="interaction" id="input-real-pseudo" type="text" />
+    </div>
+    <action name="updateFalsePseudo"></action>
+    <button>OK</button>
+</div>
+
+
 <div class="section">
     <section class="content">
         Donne moi un descriptif de ton personnage (300 mots minimum).

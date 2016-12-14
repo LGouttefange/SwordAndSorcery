@@ -60,10 +60,13 @@ $(function () {
     var actionsHistory = [];
     var moonMoon = new MoonMoon();
     var minNumberOfWordsForDescription = 300;
+    var falsePseudo;
+    var pseudo;
     var actions = {
         "hit": loseOneLife,
         "reset": resetGame,
-        "start": startGame
+        "start": startGame,
+        "updateFalsePseudo" : updateFalsePseudo
     };
 
     function placeholder(){
@@ -93,11 +96,32 @@ $(function () {
         gotoNextSection();
     });
 
-    function updatePseudo() {
-        $("pseudo").text( $("#input-pseudo").val() )
+    function enableIfPseudoIsFree() {
+        var inputPseudo = $("#input-real-pseudo");
+        var pseudoIsNotFree = pseudo === falsePseudo;
+        inputPseudo.closest(".section").find("button").attr('disabled',pseudoIsNotFree);
+        if(pseudoIsNotFree)
+            inputPseudo.addClass("invalid");
+        else
+            inputPseudo.removeClass("invalid");
     }
 
-    $("input#input-pseudo").keydown(updatePseudo);
+    function updatePseudo() {
+
+        pseudo = $("#input-real-pseudo").val();
+        $("pseudo").text(pseudo );
+        enableIfPseudoIsFree();
+    }
+
+    function updateFalsePseudo(){
+       falsePseudo = $("#input-pseudo").val();
+        $("#input-real-pseudo").val(falsePseudo);
+        $("falsepseudo").text(falsePseudo );
+        updatePseudo();
+    }
+
+    $("input#input-pseudo").change(updateFalsePseudo);
+    $("input#input-real-pseudo").keydown(updatePseudo);
 
     $(".section > action").on("doAction", function () {
         actions[$(this).attr("name")]();
@@ -105,14 +129,14 @@ $(function () {
 
     $(".section interaction").click(function () {
         interactions[$(this).data("action")]();
-    })
+    });
 
     function toggleActiveInteraction() {
         $(this).parent().children("interaction.toggle").removeClass("active");
         $(this).addClass("active");
     }
 
-    $(".section interaction.toggle").click(toggleActiveInteraction)
+    $(".section interaction.toggle").click(toggleActiveInteraction);
 
     function updateWordCountOfDescription() {
 
@@ -198,6 +222,6 @@ $(function () {
 
     $(".section +.section").hide();
     setPlayerSexToFemale();
-    updatePseudo();
+    updateFalsePseudo();
 
 });
