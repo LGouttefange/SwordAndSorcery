@@ -66,8 +66,13 @@ $(function () {
         "hit": loseOneLife,
         "reset": resetGame,
         "start": startGame,
-        "updateFalsePseudo" : updateFalsePseudo
+        "updateFalsePseudo": updateFalsePseudo,
+        "setClassicTheme": setClassicTheme
     };
+
+    function setClassicTheme() {
+        $('body').removeClass("dark-souls");
+    }
 
     function placeholder(){
         console.log('Function not implemented yet');

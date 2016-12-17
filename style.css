@@ -1,3 +1,13 @@
+@font-face {
+	font-family: Dark Souls;
+	src: url("fonts/themes/darksouls/OptimusPrinceps.ttf");
+}
+
+@font-face {
+	font-family: Dark Souls Bold;
+	src: url("fonts/themes/darksouls/OptimusPrincepsSemiBold.ttf");
+}
+
 body {
 	font-size : 13pt;
 	font-family : "Trebuchet MS", Arial, sans-serif;
@@ -86,7 +96,7 @@ h2 {
 	text-decoration: none;
 	padding: 5px;
 	background: lightGray;
-	border: 2px solid #eee;
+	margin: 2px;
 	cursor: pointer;
 	text-align: center;
 
@@ -121,4 +131,22 @@ h2 {
 .section .error{
     color:red;
     font-weight: bold;
+}
+
+.dark-souls {
+	font-family: "Dark Souls", "Arial Black", sans-serif;
+	background-image: url("img/themes/darksouls/background.jpg");
+	background-size: 100%;
+}
+
+body.dark-souls #status, body.dark-souls #status * {
+	border: 0;
+}
+
+body.dark-souls .section {
+	background-image: url("img/themes/darksouls/frame.png");
+	background-size: 100% 100%;
+	padding: 20px;
+	color: white;
+	border: 0;
 }
