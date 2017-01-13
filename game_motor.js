@@ -1,7 +1,32 @@
 $(function () {
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+
+    var life;
+    var buttons = $('.section button')
+    var buttonsWithGo = buttons.filter("button[go]");
+    var buttonsWithoutGo = buttons.filter("button:not(button[go])");
+    var status = $("#status");
+    var currentSection = $(".section").first();
+    var actionsHistory = [];
+    var moonMoon = new MoonMoon();
+    var minNumberOfWordsForDescription = 300;
+    var falsePseudo;
+    var pseudo;
+    var DEFAULT_LIFE = 3;
+    var actions = {
+        "hit": loseOneLife,
+        "reset": resetGame,
+        "start": startGame,
+        "updateFalsePseudo": updateFalsePseudo,
+        "setClassicTheme": setClassicTheme,
+        "setGameTheme": setGameTheme
+    };
+
+    var interactions = {
+        "loadDescription": loadDescription,
+        "setPlayerSexToMale": setPlayerSexToMale,
+        "setPlayerSexToFemale": setPlayerSexToFemale
+    };
+
 
     class MoonMoon {
         constructor() {
@@ -49,40 +74,40 @@ $(function () {
         }
     }
 
-    var DEFAULT_LIFE = 3;
+    buttonsWithGo.click(function () {
+        gotoSection($(this).attr("go"))
+    });
+    buttonsWithoutGo.click(function () {
+        gotoNextSection();
+    });
+    $("input#input-pseudo").change(updateFalsePseudo);
+    $("input#input-real-pseudo").change(updatePseudo);
 
-    var life;
-    var buttons = $('.section button')
-    var buttonsWithGo = buttons.filter("button[go]");
-    var buttonsWithoutGo = buttons.filter("button:not(button[go])");
-    var status = $("#status");
-    var currentSection = $(".section").first();
-    var actionsHistory = [];
-    var moonMoon = new MoonMoon();
-    var minNumberOfWordsForDescription = 300;
-    var falsePseudo;
-    var pseudo;
-    var actions = {
-        "hit": loseOneLife,
-        "reset": resetGame,
-        "start": startGame,
-        "updateFalsePseudo": updateFalsePseudo,
-        "setClassicTheme": setClassicTheme
-    };
+    $(".section > action").on("doAction", function () {
+        actions[$(this).attr("name")]();
+    });
+
+    $(".section interaction").click(function () {
+        interactions[$(this).data("action")]();
+    });
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
 
     function setClassicTheme() {
         $('body').removeClass("dark-souls");
     }
 
+    function setGameTheme() {
+        $('body').addClass("dark-souls");
+    }
+
     function placeholder(){
         console.log('Function not implemented yet');
     }
-
-    var interactions = {
-        "loadDescription": loadDescription,
-        "setPlayerSexToMale": setPlayerSexToMale,
-        "setPlayerSexToFemale" : setPlayerSexToFemale
-    };
 
     function setPlayerSexToMale(){
         $("m").show();
@@ -94,12 +119,6 @@ $(function () {
         $("m").hide();
     }
 
-    buttonsWithGo.click(function () {
-        gotoSection($(this).attr("go"))
-    });
-    buttonsWithoutGo.click(function () {
-        gotoNextSection();
-    });
 
     function enableIfPseudoIsFree() {
         var inputPseudo = $("#input-real-pseudo");
@@ -125,16 +144,6 @@ $(function () {
         updatePseudo();
     }
 
-    $("input#input-pseudo").change(updateFalsePseudo);
-    $("input#input-real-pseudo").keydown(updatePseudo);
-
-    $(".section > action").on("doAction", function () {
-        actions[$(this).attr("name")]();
-    });
-
-    $(".section interaction").click(function () {
-        interactions[$(this).data("action")]();
-    });
 
     function toggleActiveInteraction() {
         $(this).parent().children("interaction.toggle").removeClass("active");
