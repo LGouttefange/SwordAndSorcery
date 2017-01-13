@@ -1,31 +1,5 @@
 $(function () {
 
-    var life;
-    var buttons = $('.section button')
-    var buttonsWithGo = buttons.filter("button[go]");
-    var buttonsWithoutGo = buttons.filter("button:not(button[go])");
-    var status = $("#status");
-    var currentSection = $(".section").first();
-    var actionsHistory = [];
-    var moonMoon = new MoonMoon();
-    var minNumberOfWordsForDescription = 300;
-    var falsePseudo;
-    var pseudo;
-    var DEFAULT_LIFE = 3;
-    var actions = {
-        "hit": loseOneLife,
-        "reset": resetGame,
-        "start": startGame,
-        "updateFalsePseudo": updateFalsePseudo,
-        "setClassicTheme": setClassicTheme,
-        "setGameTheme": setGameTheme
-    };
-
-    var interactions = {
-        "loadDescription": loadDescription,
-        "setPlayerSexToMale": setPlayerSexToMale,
-        "setPlayerSexToFemale": setPlayerSexToFemale
-    };
 
 
     class MoonMoon {
@@ -74,6 +48,65 @@ $(function () {
         }
     }
 
+    class AudioPlayer {
+
+        constructor(name) {
+            this.name = name;
+            this.$elem = AudioPlayer.newAudioElement(name);
+            this.elem = this.$elem[0]; //objet JS classique pour les fonctions play/stop
+        }
+
+
+        static newAudioElement(name) {
+            return $("<audio/>",
+                {id: name})
+                .prependTo($('body'));
+
+        }
+
+        play(src) {
+            this.$elem.attr('src', this.srcFromfileName(src))
+            this.elem.play();
+        }
+
+        srcFromfileName(src) {
+            return "audio/" + this.name + "/" + src + ".mp3";
+        }
+    }
+
+
+    var life;
+    var buttons = $('.section button')
+    var buttonsWithGo = buttons.filter("button[go]");
+    var buttonsWithoutGo = buttons.filter("button:not(button[go])");
+    var status = $("#status");
+    var currentSection = $(".section").first();
+    var actionsHistory = [];
+    var moonMoon = new MoonMoon();
+    var minNumberOfWordsForDescription = 300;
+    var falsePseudo;
+    var pseudo;
+    var DEFAULT_LIFE = 3;
+    var actions = {
+        "hit": loseOneLife,
+        "reset": resetGame,
+        "start": startGame,
+        "updateFalsePseudo": updateFalsePseudo,
+        "setClassicTheme": setClassicTheme,
+        "setGameTheme": setGameTheme
+    };
+
+    var interactions = {
+        "loadDescription": loadDescription,
+        "setPlayerSexToMale": setPlayerSexToMale,
+        "setPlayerSexToFemale": setPlayerSexToFemale
+    };
+    var audioPlayers = {
+        "sound": new AudioPlayer("sound"),
+        "music": new AudioPlayer("music")
+    };
+
+
     buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
     });
@@ -90,11 +123,16 @@ $(function () {
     $(".section interaction").click(function () {
         interactions[$(this).data("action")]();
     });
+    $(".section interaction.toggle").click(toggleActiveInteraction);
+
+    $(".section audioplayer").on('play', function () {
+            audioPlayers[$(this).attr("name")].play($(this).text())
+        }
+    );
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
 
 
     function setClassicTheme() {
@@ -105,16 +143,16 @@ $(function () {
         $('body').addClass("dark-souls");
     }
 
-    function placeholder(){
+    function placeholder() {
         console.log('Function not implemented yet');
     }
 
-    function setPlayerSexToMale(){
+    function setPlayerSexToMale() {
         $("m").show();
         $("f").hide();
     }
 
-    function setPlayerSexToFemale(){
+    function setPlayerSexToFemale() {
         $("f").show();
         $("m").hide();
     }
@@ -123,8 +161,8 @@ $(function () {
     function enableIfPseudoIsFree() {
         var inputPseudo = $("#input-real-pseudo");
         var pseudoIsNotFree = pseudo === falsePseudo;
-        inputPseudo.closest(".section").find("button").attr('disabled',pseudoIsNotFree);
-        if(pseudoIsNotFree)
+        inputPseudo.closest(".section").find("button").attr('disabled', pseudoIsNotFree);
+        if (pseudoIsNotFree)
             inputPseudo.addClass("invalid");
         else
             inputPseudo.removeClass("invalid");
@@ -133,14 +171,14 @@ $(function () {
     function updatePseudo() {
 
         pseudo = $("#input-real-pseudo").val();
-        $("pseudo").text(pseudo );
+        $("pseudo").text(pseudo);
         enableIfPseudoIsFree();
     }
 
-    function updateFalsePseudo(){
-       falsePseudo = $("#input-pseudo").val();
+    function updateFalsePseudo() {
+        falsePseudo = $("#input-pseudo").val();
         $("#input-real-pseudo").val(falsePseudo);
-        $("falsepseudo").text(falsePseudo );
+        $("falsepseudo").text(falsePseudo);
         updatePseudo();
     }
 
@@ -150,7 +188,6 @@ $(function () {
         $(this).addClass("active");
     }
 
-    $(".section interaction.toggle").click(toggleActiveInteraction);
 
     function updateWordCountOfDescription() {
 
@@ -168,9 +205,9 @@ $(function () {
 
         $("#description")
             .attr("disabled", true);
-            $.ajax("description")
+        $.ajax("description")
             .done(function (texte) {
-                $("#description").val( texte );
+                $("#description").val(texte);
                 updateWordCountOfDescription();
             })
     }
@@ -179,12 +216,6 @@ $(function () {
         return str.split(' ').length;
     }
 
-    function changeSection(nextSection) {
-        currentSection.hide();
-        currentSection = nextSection;
-        currentSection.show();
-        currentSection.find("action").trigger("doAction");
-    }
 
     function gotoSection(key) {
         var nextSection = $("#" + key);
@@ -235,6 +266,14 @@ $(function () {
         status.find("> .life > .value").text(life);
     }
 
+
+    function changeSection(nextSection) {
+        currentSection.hide();
+        currentSection = nextSection;
+        currentSection.show();
+        currentSection.find("action").trigger("doAction");
+        currentSection.find("audioPlayer").trigger("play");
+    }
 
     $(".section +.section").hide();
     setPlayerSexToFemale();

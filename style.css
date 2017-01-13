@@ -1,117 +1,121 @@
 @font-face {
-	font-family: Dark Souls;
-	src: url("fonts/themes/darksouls/OptimusPrinceps.ttf");
+    font-family: Dark Souls;
+    src: url("fonts/themes/darksouls/OptimusPrinceps.ttf");
 }
 
 @font-face {
-	font-family: Dark Souls Bold;
-	src: url("fonts/themes/darksouls/OptimusPrincepsSemiBold.ttf");
+    font-family: Dark Souls Bold;
+    src: url("fonts/themes/darksouls/OptimusPrincepsSemiBold.ttf");
 }
 
 body {
-	font-size : 13pt;
-	font-family : "Trebuchet MS", Arial, sans-serif;
-	margin: 0;
+    font-size: 13pt;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin: 0;
 }
 
 h2 {
-	margin-top : 0px;
-	font-weight : bold;
+    margin-top: 0px;
+    font-weight: bold;
 }
 
 #status {
-	position : absolute;
-	top : 0px;
-	width : 100%;
-	text-align : center;
-	border-bottom : 1px solid lightGray;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid lightGray;
 }
 
 #status div {
-	display : inline-block;
-	padding : 10px 20px;
-	color : gray;
-	border-left : 1px solid lightGray;
-	border-right : 1px solid lightGray;
+    display: inline-block;
+    padding: 10px 20px;
+    color: gray;
+    border-left: 1px solid lightGray;
+    border-right: 1px solid lightGray;
 }
-#status div+div {
-	border-left : none;
+
+#status div + div {
+    border-left: none;
 }
 
 .section {
-	padding : 10px;
-	margin : auto;
-	margin-top : 100px;
-	max-width : 600px;
-	border : 1px solid lightGray;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 600px;
+    border: 1px solid lightGray;
 }
+
 .section#intro {
-	display : block;
+    display: block;
 }
+
 .section button {
-	display : block;
-	width : 100%;
-	color : black;
-	text-decoration : none;
-	padding : 5px;
-	margin-top : 30px;
-	background : lightGray;
-	border : none;
-	cursor : pointer;
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 30px;
+    background: lightGray;
+    border: none;
+    cursor: pointer;
 }
-.section button+button  {
-	margin-top : 10px;
+
+.section button + button {
+    margin-top: 10px;
 }
 
 .section button:hover {
-	color : lightGray;
-	background-color : black;
+    color: lightGray;
+    background-color: black;
 }
 
 .battle {
-	padding : 10px 10px;
-	margin : 20px 0px;
-	box-shadow : 0px 2px 8px gray;
+    padding: 10px 10px;
+    margin: 20px 0px;
+    box-shadow: 0px 2px 8px gray;
 }
 
 #moon-moon {
-	width: 540px;
-	height: 440px;
-	position: fixed;
-	bottom: -500px;
-	left: 50px;
-	background-repeat: no-repeat;
-	background-image: url(img/moonmoon.png);
+    width: 540px;
+    height: 440px;
+    position: fixed;
+    bottom: -500px;
+    left: 50px;
+    background-repeat: no-repeat;
+    background-image: url(img/moonmoon.png);
 }
 
 .section .interactions {
-	width: 100%;
-	display: table;
-	margin-top: 30px;
+    width: 100%;
+    display: table;
+    margin-top: 30px;
 }
 
 .section interaction {
-	display: table-cell;
-	color: black;
-	text-decoration: none;
-	padding: 5px;
-	background: lightGray;
-	margin: 2px;
-	cursor: pointer;
-	text-align: center;
+    display: table-cell;
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    background: lightGray;
+    margin: 2px;
+    cursor: pointer;
+    text-align: center;
 
 }
 
 .section interaction:hover {
-	color: lightGray;
-	background-color: black;
+    color: lightGray;
+    background-color: black;
 }
 
 .section > .interactions > textarea {
-	height: 400px;
+    height: 400px;
 }
 
-.section > .interactions > textarea, .section > .interactions  input {
+.section > .interactions > textarea, .section > .interactions input {
     width: 90%;
     resize: none;
     border: 5px solid #ccc;
@@ -119,34 +123,42 @@ h2 {
 }
 
 .section > .interactions #compteur-mots {
-	font-weight: bold;
-	color: red;
+    font-weight: bold;
+    color: red;
 }
 
-.section interaction.toggle.active{
+.section interaction.toggle.active {
     background: #333;
-    color:white;
+    color: white;
 }
 
-.section .error{
-    color:red;
+.section .error {
+    color: red;
     font-weight: bold;
 }
 
 .dark-souls {
-	font-family: "Dark Souls", "Arial Black", sans-serif;
-	background-image: url("img/themes/darksouls/background.jpg");
-	background-size: 100%;
+    font-family: "Dark Souls", "Arial Black", sans-serif;
+    background-image: url("img/themes/darksouls/background.jpg");
+    background-size: 100%;
 }
 
 body.dark-souls #status, body.dark-souls #status * {
-	border: 0;
+    border: 0;
 }
 
 body.dark-souls .section {
-	background-image: url("img/themes/darksouls/frame.png");
-	background-size: 100% 100%;
-	padding: 20px;
-	color: white;
-	border: 0;
+    background-image: url("img/themes/darksouls/frame.png");
+    background-size: 100% 100%;
+    padding: 20px;
+    color: white;
+    border: 0;
+}
+
+.section audioplayer {
+    display: none;
+}
+
+.section + section {
+    display: none;
 }

@@ -9,6 +9,7 @@
 </head>
 
 <body class="dark-souls">
+
 <div id="status">
     <div class="life">
         Life : <span class="value">--</span>
@@ -29,13 +30,16 @@
     <section class="content">
 
         Bienvenue dans le monde joyeux des pokémon ! Avant de commencer, es-tu un garçon où une fille ?
-        Je suis un<m> garçon</m><f>e fille</f>
+        Je suis un
+        <m> garçon</m>
+        <f>e fille</f>
     </section>
     <div class="interactions">
         <interaction class="toggle" data-action="setPlayerSexToMale">Un garçon</interaction>
         <interaction class="toggle active" data-action="setPlayerSexToFemale">Une fille</interaction>
 
     </div>
+    <audioplayer name="music">DS-menu</audioplayer>
     <button>Se relever</button>
 </div>
 
@@ -60,7 +64,7 @@
         </p>
     </section>
     <div class="interactions">
-        <input class="interaction" id="input-real-pseudo" type="text" />
+        <input class="interaction" id="input-real-pseudo" type="text"/>
     </div>
     <action name="updateFalsePseudo"></action>
     <button>OK</button>
