@@ -228,6 +228,13 @@ body.dark-souls > #inventory {
     background: no-repeat 50%;
     -webkit-background-size: auto 100%;
     background-size: auto 100%;
+    width: 25%;
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 40px;
+    padding-right: 40px;
+    color: black;
+    text-shadow: 1px 1px 4px #FFF;
 }
 
 #inventory > table td[data-item_key] {

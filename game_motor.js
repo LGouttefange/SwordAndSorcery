@@ -149,7 +149,8 @@ $(function () {
             var i = 0;
             $.each(items, function (index, item) {
                 inventoryView.view.find("td:eq(" + i + ")")
-                    .css('background-image', "url(" + item.iconPath + ")");
+                    .css('background-image', "url(" + item.iconPath + ")")
+                    .text(item.numberOfUses)
                 i++;
             })
         }
@@ -175,6 +176,7 @@ $(function () {
 
         useItemByKey(item_key) {
             this.inventory.items[item_key].use();
+            this.view.refreshView();
         }
     }
 
