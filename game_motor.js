@@ -1,5 +1,61 @@
 $(function () {
 
+    class Item {
+
+
+        constructor(options) {
+            options = options || {};
+            this.key = options.key;
+            this.name = options.name || "placeholder";
+            this.max_use = options.max_use || 0;
+            this.effect = options.effect || function () {
+                };
+            this.iconPath = this.icon_path(options.iconName) || this.icon_path("placeholder");
+            this.numberOfUses = options.numberOfUses || options.max_use;
+        }
+
+        icon_path(name) {
+            return "img/icons/" + name + ".png";
+        }
+
+        use() {
+            if (this.numberOfUses > 0) {
+                this.effect();
+                --this.numberOfUses;
+            }
+        }
+    }
+
+    class RefillableItem extends Item {
+        refill() {
+            this.numberOfUses = this.max_use;
+        }
+    }
+
+    class Inventory {
+        constructor() {
+            this.items = {};
+        }
+
+        add(item) {
+            var key = item.key;
+            this.items[key] = item
+        }
+
+        remove(key) {
+            this.items = this.items.filter(item => item !== key);
+        }
+
+        find(key) {
+            return this.items[key] || null;
+        }
+
+    }
+
+    function healPlayer() {
+        console.log("healed for 40HP");
+    }
+
 
 
     class MoonMoon {
@@ -71,7 +127,7 @@ $(function () {
             this.elem.play();
         }
 
-        stop(){
+        stop() {
             this.elem.pause();
             this.elem.currentTime = 0;
         }
@@ -79,8 +135,64 @@ $(function () {
         srcFromfileName(src) {
             return "audio/" + this.name + "/" + src + ".mp3";
         }
-    };
+    }
 
+    class InventoryView {
+        constructor(inventory) {
+            this.view = $("body > #inventory > table");
+            this.inventory = inventory;
+        }
+
+        refreshView() {
+            var inventoryView = this;
+            var items = this.inventory.items;
+            var i = 0;
+            $.each(items, function (index, item) {
+                inventoryView.view.find("td:eq(" + i + ")")
+                    .css('background-image', "url(" + item.iconPath + ")");
+                i++;
+            })
+        }
+    }
+
+    class InventoryController {
+        constructor(options) {
+            this.view = options.view;
+            this.inventory = options.inventory;
+        }
+
+        refreshActions() {
+            var inventoryView = this.view;
+            var items = this.inventory.items;
+            var i = 0;
+            inventoryView.view.find("td").removeData('item_key');
+            $.each(items, function (key) {
+                inventoryView.view.find("td:eq(" + i + ")")
+                    .data('item_key', key)
+                i++;
+            })
+        }
+
+        useItemByKey(item_key) {
+            this.inventory.items[item_key].use();
+        }
+    }
+
+    var inventory = new Inventory();
+
+    inventory.add(new RefillableItem({
+        key: "EST",
+        name: "Fiole d'Estus",
+        max_use: 5,
+        effect: healPlayer,
+        iconName: "Estus"
+    }));
+
+
+    var inventoryView = new InventoryView(inventory);
+    var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
+    inventoryController.refreshActions();
+    inventoryView.refreshView();
 
     var buttons = $('.section button');
     var buttonsWithGo = buttons.filter("button[go]");
@@ -112,8 +224,7 @@ $(function () {
         "music": new AudioPlayer("music")
     };
 
-    function newCheckpoint()
-    {
+    function newCheckpoint() {
         checkPoint = $(this).closest(".section").attr('id');
         console.log(checkPoint);
     }
@@ -125,11 +236,11 @@ $(function () {
 
 
     function playAssociatedSound() {
-        audioPlayers['sound'].play( $(this).attr("sound") );
+        audioPlayers['sound'].play($(this).attr("sound"));
     }
 
     function playSelectSound() {
-        audioPlayers['sound'].play( "SELECT" );
+        audioPlayers['sound'].play("SELECT");
     }
 
     $('*[sound]').click(playAssociatedSound);
@@ -142,14 +253,14 @@ $(function () {
     buttonsWithoutGo.click(function () {
         gotoNextSection();
     });
-    $(".section > checkpoint").on('set',newCheckpoint)
+    $(".section > checkpoint").on('set', newCheckpoint)
     $("input#input-pseudo").change(updateFalsePseudo);
     $("input#input-real-pseudo")
         .change(updatePseudo)
         .keydown(updatePseudo);
 
     $(".section > action").on("doAction", function () {
-        actions[ $(this).attr("name") ]();
+        actions[$(this).attr("name")]();
     });
 
     $(".section interaction").click(function () {
@@ -159,18 +270,25 @@ $(function () {
 
     $(".section audioplayer").on('play', function () {
             var audioPlayer = audioPlayers[$(this).attr("name")];
-            if($(this).text() === "stop")
+        if ($(this).text() === "stop")
                 audioPlayer.stop();
             else
                 audioPlayer.play($(this).text())
         }
     );
+    function tryUseSelectedItem() {
+        var item_key = $(this).data('item_key');
+        if (item_key) {
+            inventoryController.useItemByKey(item_key);
+        }
+    }
+
+    $("#inventory > table td").click(tryUseSelectedItem)
 
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
 
 
     function setClassicTheme() {
@@ -263,8 +381,6 @@ $(function () {
     function gotoNextSection() {
         changeSection(currentSection.next());
     }
-
-
 
 
     function die() {

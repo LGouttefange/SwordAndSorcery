@@ -201,3 +201,31 @@ body.dark-souls > .section interaction.active {
 .section + section {
     display: none;
 }
+
+#inventory {
+    display: none;
+}
+
+body.dark-souls > #inventory {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 600px;
+    background-image: url("img/themes/darksouls/frame.png");
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 100px;
+
+}
+
+#inventory > table {
+    width: 100%;
+    height: 100%;
+    padding: 4px 20px;
+}
+
+#inventory > table td {
+    background: no-repeat 50%;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+}

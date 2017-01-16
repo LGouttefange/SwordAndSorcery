@@ -15,9 +15,7 @@
         the first enemy</h2>
     En voila un jeu qu'il est bien apparemment.
 
-    <action name="reset"></action>
 
-    <audioplayer name="music">DS-NamelessSong</audioplayer>
     <button sound="SELECT" >Commencer l'aventure !</button>
 </div>
 
@@ -32,6 +30,7 @@
         <interaction class="toggle active" data-action="setPlayerSexToFemale">Une fille</interaction>
 
     </div>
+    <audioplayer name="music">DS-NamelessSong</audioplayer>
     <button sound="OK" >Se relever</button>
 </div>
 
@@ -43,6 +42,7 @@
     <div class="interactions">
         <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
     </div>
+    <action name="useEstus"></action>
     <button sound="OK">OK</button>
 </div>
 
@@ -187,6 +187,20 @@
         <interaction data-action="goToCheckpoint" sound="OK">Revenir au dernier feu de camp</interaction>
     </div>
 </div>
+
+<div id="inventory">
+    <table>
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <div id="moon-moon"></div>
 </body>
 
