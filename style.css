@@ -229,3 +229,7 @@ body.dark-souls > #inventory {
     -webkit-background-size: auto 100%;
     background-size: auto 100%;
 }
+
+#inventory > table td[data-item_key] {
+    cursor: pointer;
+}

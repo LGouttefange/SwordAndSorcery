@@ -165,10 +165,10 @@ $(function () {
             var inventoryView = this.view;
             var items = this.inventory.items;
             var i = 0;
-            inventoryView.view.find("td").removeData('item_key');
+            inventoryView.view.find("td").removeAttr('data-item_key');
             $.each(items, function (key) {
                 inventoryView.view.find("td:eq(" + i + ")")
-                    .data('item_key', key)
+                    .attr('data-item_key', key)
                 i++;
             })
         }
