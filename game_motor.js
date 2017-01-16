@@ -65,7 +65,9 @@ $(function () {
         }
 
         play(src) {
+            this.stop();
             this.$elem.attr('src', this.srcFromfileName(src))
+            this.elem.load();
             this.elem.play();
         }
 
@@ -77,40 +79,61 @@ $(function () {
         srcFromfileName(src) {
             return "audio/" + this.name + "/" + src + ".mp3";
         }
-    }
+    };
 
 
-    var life;
-    var buttons = $('.section button')
+    var buttons = $('.section button');
     var buttonsWithGo = buttons.filter("button[go]");
     var buttonsWithoutGo = buttons.filter("button:not(button[go])");
     var status = $("#status");
     var currentSection = $(".section").first();
-    var actionsHistory = [];
     var moonMoon = new MoonMoon();
     var minNumberOfWordsForDescription = 300;
     var falsePseudo;
     var pseudo;
-    var DEFAULT_LIFE = 3;
+    var checkPoint = "wakeUp"
     var actions = {
-        "hit": loseOneLife,
-        "reset": resetGame,
-        "start": startGame,
         "updateFalsePseudo": updateFalsePseudo,
         "setClassicTheme": setClassicTheme,
-        "setGameTheme": setGameTheme
+        "setGameTheme": setGameTheme,
+        "newCheckpoint": newCheckpoint,
+        "die": die
     };
 
     var interactions = {
         "loadDescription": loadDescription,
         "setPlayerSexToMale": setPlayerSexToMale,
-        "setPlayerSexToFemale": setPlayerSexToFemale
+        "setPlayerSexToFemale": setPlayerSexToFemale,
+        "goToCheckpoint": goToCheckpoint
     };
+
     var audioPlayers = {
         "sound": new AudioPlayer("sound"),
         "music": new AudioPlayer("music")
     };
 
+    function newCheckpoint()
+    {
+        checkPoint = $(this).closest(".section").attr('id');
+        console.log(checkPoint);
+    }
+
+
+    function goToCheckpoint() {
+        gotoSection(checkPoint);
+    }
+
+
+    function playAssociatedSound() {
+        audioPlayers['sound'].play( $(this).attr("sound") );
+    }
+
+    function playSelectSound() {
+        audioPlayers['sound'].play( "SELECT" );
+    }
+
+    $('*[sound]').click(playAssociatedSound);
+    $("body > .section interaction.toggle").click(playSelectSound)
 
     buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
@@ -119,13 +142,14 @@ $(function () {
     buttonsWithoutGo.click(function () {
         gotoNextSection();
     });
+    $(".section > checkpoint").on('set',newCheckpoint)
     $("input#input-pseudo").change(updateFalsePseudo);
     $("input#input-real-pseudo")
         .change(updatePseudo)
         .keydown(updatePseudo);
 
     $(".section > action").on("doAction", function () {
-        actions[$(this).attr("name")]();
+        actions[ $(this).attr("name") ]();
     });
 
     $(".section interaction").click(function () {
@@ -142,9 +166,11 @@ $(function () {
         }
     );
 
+
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
 
 
     function setClassicTheme() {
@@ -238,39 +264,11 @@ $(function () {
         changeSection(currentSection.next());
     }
 
-    function getLife() {
-        return life;
-    }
 
-    function resetLife() {
-        life = DEFAULT_LIFE;
-        displayLife();
-    }
 
-    function playerIsDead() {
-        return life <= 0;
-    }
 
-    function loseOneLife() {
-        life--;
-        displayLife();
-        if (playerIsDead())
-            endGame();
-    }
-
-    function startGame() {
-        resetLife();
-        displayLife();
-    }
-
-    function resetGame() {
-        resetLife();
-        gotoSection("wakeUp");
-    }
-
-    function endGame() {
+    function die() {
         gotoSection("death");
-        console.log(actionsHistory);
     }
 
 
@@ -285,6 +283,7 @@ $(function () {
         currentSection.show();
         currentSection.find("action").trigger("doAction");
         currentSection.find("audioPlayer").trigger("play");
+        currentSection.find("checkpoint").trigger("set");
     }
 
     $(".section +.section").hide();

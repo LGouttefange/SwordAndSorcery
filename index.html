@@ -17,51 +17,49 @@
 
     <action name="reset"></action>
 
-    <button>Commencer l'aventure !</button>
+    <audioplayer name="music">DS-NamelessSong</audioplayer>
+    <button sound="SELECT" >Commencer l'aventure !</button>
 </div>
 
 <div class="section">
     <section class="content">
 
-        Bienvenue dans le monde joyeux des pokémon ! Avant de commencer, es-tu un garçon où une fille ?
-        Je suis un<m> garçon</m><f>e fille</f>
+        Bienvenue dans le monde joyeux des pokemon ! Avant de commencer, es-tu un garcon ou une fille ?
+        Je suis un<m> garcon</m><f>e fille</f>
     </section>
     <div class="interactions">
-        <interaction class="toggle" data-action="setPlayerSexToMale">Un garçon</interaction>
+        <interaction class="toggle" data-action="setPlayerSexToMale">Un garcon</interaction>
         <interaction class="toggle active" data-action="setPlayerSexToFemale">Une fille</interaction>
 
     </div>
-    <action name="setClassicTheme"></action>
-    <audioplayer name="music">DS-menu</audioplayer>
-    <button>Se relever</button>
+    <button sound="OK" >Se relever</button>
 </div>
 
 
 <div class="section">
     <section class="content">
-        Comment souhaitez-vous être appelé ?
+        Comment souhaitez-vous être appele ?
     </section>
     <div class="interactions">
         <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
     </div>
-    <action name="setGameTheme"></action>
-    <button>OK</button>
+    <button sound="OK">OK</button>
 </div>
 
 <div class="section">
     <section class="content">
         <p class="error">
-            Ce pseudo est déjà pris
+            Ce pseudo est dejà pris
         </p>
         <p>
-            Comment souhaitez-vous être appelé ?
+            Comment souhaitez-vous être appele ?
         </p>
     </section>
     <div class="interactions">
         <input class="interaction" id="input-real-pseudo" type="text"/>
     </div>
     <action name="updateFalsePseudo"></action>
-    <button>OK</button>
+    <button sound="OK" >OK</button>
 </div>
 
 
@@ -73,11 +71,11 @@
         <textarea name="description" id="description">Racontez-moi votre histoire...</textarea>
 
         <div>
-            <interaction data-action="loadDescription">Créer une histoire pour moi</interaction>
+            <interaction data-action="loadDescription">Creer une histoire pour moi</interaction>
         </div>
         <p>Encore <span id="compteur-mots">300</span> mots !</p>
     </div>
-    <button disabled>Se relever</button>
+    <button disabled sound="OK">Se relever</button>
 </div>
 
 <div class="section" id="wakeUp">
@@ -86,7 +84,8 @@
 
     </section>
 
-    <action name="start"></action>
+    <checkpoint></checkpoint>
+
     <action name="setClassicTheme"></action>
     <audioplayer name="music">stop</audioplayer>
     <button>Se relever</button>
@@ -112,6 +111,8 @@
 
     </section>
 
+    <action name="die"></action>
+
     <button go="doorLocked">Sortir</button>
     <button go="wait">Attendre</button>
 </div>
@@ -132,38 +133,37 @@
     <section class="content">
         <p>Aie ! Vous perdez 1 point de vie...</p>
 
-        <p>Quelque chose tombe du plafond : une clé était cachée dans une
+        <p>Quelque chose tombe du plafond : une cle etait cachee dans une
             faille.</p>
 
 
     </section>
-    <action name="hit"></action>
 
-    <button go="exit">Utiliser la clé et ouvrir la porte</button>
+    <button go="exit">Utiliser la cle et ouvrir la porte</button>
 </div>
 
 
 <div class="section" id="doorLocked">
     <section class="content">
         Malheureusement, une porte en bois bloque le passage. Elle a l'air vraiment solide&nbsp;:
-        peu probable que vous puissiez la défoncer.
+        peu probable que vous puissiez la defoncer.
 
     </section>
-    <button go="hitDoor">Donner un grand coup d'épaule</button>
+    <checkpoint></checkpoint>
+    <button go="hitDoor">Donner un grand coup d'epaule</button>
     <button go="cavern">Retourner sur vos pas</button>
 </div>
 
 
 <div class="section" id="hitDoor">
     <section class="content">
-        BLAM ! La porte n'a pas bougé d'un poil. Par contre, votre épaule, elle, s'est enfoncée de quelques centimètres.
+        BLAM ! La porte n'a pas bouge d'un poil. Par contre, votre epaule, elle, s'est enfoncee de quelques centimètres.
         Vous perdez 1 point de vie.
 
     </section>
 
-    <action name="hit"></action>
 
-    <button go="hitDoor">Ré-essayer !</button>
+    <button go="hitDoor">Re-essayer !</button>
     <button go="cavern">Retourner sur vos pas</button>
 </div>
 
@@ -171,7 +171,7 @@
 <div class="section" id="exit">
     <section class="content">
 
-        Vous voyez la lumière du jour... Vous avez réussi à vous échapper !
+        Vous voyez la lumière du jour... Vous avez reussi à vous echapper !
     </section>
     <button go="intro">Fin</button>
 </div>
@@ -182,7 +182,10 @@
         Vous êtes mort(e) ! C'est balot.
 
     </section>
-    <button go="intro">Fin</button>
+    <audioplayer name="sound">DEATH</audioplayer>
+    <div class="interactions">
+        <interaction data-action="goToCheckpoint" sound="OK">Revenir au dernier feu de camp</interaction>
+    </div>
 </div>
 <div id="moon-moon"></div>
 </body>

@@ -8,11 +8,18 @@
     src: url("fonts/themes/darksouls/OptimusPrincepsSemiBold.ttf");
 }
 
+html{
+    height: 100vh;
+
+}
+
 body {
     font-size: 13pt;
     font-family: "Trebuchet MS", Arial, sans-serif;
     margin: 0;
     background-image: url("img/themes/desktop/background.jpg");
+    background-size: 100% 100%;
+    padding:100px;
 }
 
 h2 {
@@ -43,7 +50,6 @@ h2 {
 .section {
     padding: 10px;
     margin: auto;
-    margin-top: 100px;
     max-width: 600px;
     border: 5px solid #accded;
     border-top: 20px solid #accded;
@@ -158,6 +164,34 @@ body.dark-souls > .section {
     color: white;
     border: 0;
     background-color: transparent;
+}
+
+body.dark-souls > .section button, body.dark-souls > .section interaction {
+
+    font-family: "Dark Souls", "Arial Black", sans-serif;
+    background-color: transparent;
+    color:white;
+}
+
+ body.dark-souls > .section input[type="text"] {
+
+    font-family: "Dark Souls", "Arial Black", sans-serif;
+    background-color: transparent;
+    color:white;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+body.dark-souls > .section input[type="text"]:focus {
+
+    outline: none;
+    text-shadow: #ffffff;
+}
+
+body.dark-souls > .section button:hover,
+body.dark-souls > .section interaction:hover,
+body.dark-souls > .section interaction.active {
+
+    background-color: #886f40;
 }
 
 .section audioplayer {
