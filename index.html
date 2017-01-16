@@ -10,12 +10,6 @@
 
 <body class="dark-souls">
 
-<div id="status">
-    <div class="life">
-        Life : <span class="value">--</span>
-    </div>
-</div>
-
 <div class="section" id="intro">
     <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
         the first enemy</h2>
@@ -30,15 +24,14 @@
     <section class="content">
 
         Bienvenue dans le monde joyeux des pokémon ! Avant de commencer, es-tu un garçon où une fille ?
-        Je suis un
-        <m> garçon</m>
-        <f>e fille</f>
+        Je suis un<m> garçon</m><f>e fille</f>
     </section>
     <div class="interactions">
         <interaction class="toggle" data-action="setPlayerSexToMale">Un garçon</interaction>
         <interaction class="toggle active" data-action="setPlayerSexToFemale">Une fille</interaction>
 
     </div>
+    <action name="setClassicTheme"></action>
     <audioplayer name="music">DS-menu</audioplayer>
     <button>Se relever</button>
 </div>
@@ -51,6 +44,7 @@
     <div class="interactions">
         <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
     </div>
+    <action name="setGameTheme"></action>
     <button>OK</button>
 </div>
 
@@ -94,7 +88,7 @@
 
     <action name="start"></action>
     <action name="setClassicTheme"></action>
-
+    <audioplayer name="music">stop</audioplayer>
     <button>Se relever</button>
 </div>
 

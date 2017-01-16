@@ -12,6 +12,7 @@ body {
     font-size: 13pt;
     font-family: "Trebuchet MS", Arial, sans-serif;
     margin: 0;
+    background-image: url("img/themes/desktop/background.jpg");
 }
 
 h2 {
@@ -44,7 +45,10 @@ h2 {
     margin: auto;
     margin-top: 100px;
     max-width: 600px;
-    border: 1px solid lightGray;
+    border: 5px solid #accded;
+    border-top: 20px solid #accded;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 .section#intro {
@@ -147,12 +151,13 @@ body.dark-souls #status, body.dark-souls #status * {
     border: 0;
 }
 
-body.dark-souls .section {
+body.dark-souls > .section {
     background-image: url("img/themes/darksouls/frame.png");
     background-size: 100% 100%;
     padding: 20px;
     color: white;
     border: 0;
+    background-color: transparent;
 }
 
 .section audioplayer {

@@ -69,6 +69,11 @@ $(function () {
             this.elem.play();
         }
 
+        stop(){
+            this.elem.pause();
+            this.elem.currentTime = 0;
+        }
+
         srcFromfileName(src) {
             return "audio/" + this.name + "/" + src + ".mp3";
         }
@@ -110,11 +115,14 @@ $(function () {
     buttonsWithGo.click(function () {
         gotoSection($(this).attr("go"))
     });
+
     buttonsWithoutGo.click(function () {
         gotoNextSection();
     });
     $("input#input-pseudo").change(updateFalsePseudo);
-    $("input#input-real-pseudo").change(updatePseudo);
+    $("input#input-real-pseudo")
+        .change(updatePseudo)
+        .keydown(updatePseudo);
 
     $(".section > action").on("doAction", function () {
         actions[$(this).attr("name")]();
@@ -126,7 +134,11 @@ $(function () {
     $(".section interaction.toggle").click(toggleActiveInteraction);
 
     $(".section audioplayer").on('play', function () {
-            audioPlayers[$(this).attr("name")].play($(this).text())
+            var audioPlayer = audioPlayers[$(this).attr("name")];
+            if($(this).text() === "stop")
+                audioPlayer.stop();
+            else
+                audioPlayer.play($(this).text())
         }
     );
 
