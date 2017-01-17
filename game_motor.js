@@ -57,30 +57,50 @@ $(function () {
     }
 
 
-
+    function elemToAnimate(){
+        return this.elem ||this;
+    }
     class MoonMoon {
         constructor() {
-            self = this;
+            var self = this;
             this.elem = $("#moon-moon");
             this.defaultPosition = {bottom: "-100px"};
-            this.elem.animate(this.defaultPosition, 1000, function (e) {
-                self.waddle();
-            })
         }
 
         goToDefaultPosition(speed) {
-            this.elem.animate({bottom: "-50px"}, speed || 1000);
+            return elemToAnimate.call(this)
+                .animate({left: "20px"}, 100)
+                .animate({bottom: "-50px"},speed || 1000)
+                .promise();
+        }
+
+        appearAndDisappear(){
+            return this.goToDefaultPosition().done(this.bark);
         }
 
         bark() {
-            this.elem
-                .animate(this.defaultPosition, 200)
-                .animate({bottom: "-50px"}, 200);
+            var moonmoon = elemToAnimate.call(this)
+                .delay(600)
+                .animate({bottom: "+=50px"}, 100)
+                .animate({bottom: "-=50px"}, 100)
+                .delay(200)
+                .promise();
+
+            moonmoon.done(function(){
+                audioPlayers["moonmoon"].play("WOOF");
+
+                this
+                .animate({bottom: "-500px"})
+                .promise();
+
+            }.call(this));
+            return moonmoon;
         }
 
+
+
         waddle() {
-            self = this.elem;
-            this.elem
+            elemToAnimate.call(this)
                 .animate({bottom: "-=30px", left: "+=50px"}, 100, 'linear')
                 .animate({bottom: "+=30px", left: "+=50px"}, 100, 'linear')
                 .animate({bottom: "-=30px", left: "+=50px"}, 100, 'linear')
@@ -95,13 +115,7 @@ $(function () {
                 .promise();
         }
 
-        startRandomBarks() {
-            self = this; //for animate callback
-            this.bark();
-            setTimeout(function () {
-                self.startRandomBarks(200)
-            }, getRandomInt(4000, 6000));
-        }
+
     }
 
     class AudioPlayer {
@@ -175,8 +189,22 @@ $(function () {
         }
 
         useItemByKey(item_key) {
-            this.inventory.items[item_key].use();
+            this.find(item_key).use();
             this.view.refreshView();
+        }
+
+        refreshState(){
+            this.view.refreshView();
+            this.refreshActions();
+        }
+
+        find(key){
+            return this.inventory.items[key] || null;
+        }
+
+        refill(key) {
+            this.find(key).refill();
+            this.refreshState();
         }
     }
 
@@ -190,6 +218,20 @@ $(function () {
         iconName: "Estus"
     }));
 
+    var moonMoon = new MoonMoon();
+
+    function resetMoonMoonPosition() {
+        moonMoon.appearAndDisappear();
+    }
+
+    inventory.add(new Item({
+        key:"MOON",
+        name: "Moon Moon",
+        max_use: 99,
+        effect: resetMoonMoonPosition,
+        iconName: "moonmoon"
+    }));
+
 
     var inventoryView = new InventoryView(inventory);
     var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
@@ -201,7 +243,6 @@ $(function () {
     var buttonsWithoutGo = buttons.filter("button:not(button[go])");
     var status = $("#status");
     var currentSection = $(".section").first();
-    var moonMoon = new MoonMoon();
     var minNumberOfWordsForDescription = 300;
     var falsePseudo;
     var pseudo;
@@ -210,7 +251,6 @@ $(function () {
         "updateFalsePseudo": updateFalsePseudo,
         "setClassicTheme": setClassicTheme,
         "setGameTheme": setGameTheme,
-        "newCheckpoint": newCheckpoint,
         "die": die
     };
 
@@ -223,7 +263,8 @@ $(function () {
 
     var audioPlayers = {
         "sound": new AudioPlayer("sound"),
-        "music": new AudioPlayer("music")
+        "music": new AudioPlayer("music"),
+        "moonmoon": new AudioPlayer("moonmoon")
     };
 
     function newCheckpoint() {
@@ -233,6 +274,8 @@ $(function () {
 
 
     function goToCheckpoint() {
+        inventoryController.refill('EST');
+        inventoryController.refreshState();
         gotoSection(checkPoint);
     }
 
@@ -386,6 +429,7 @@ $(function () {
 
 
     function die() {
+        moonMoon.goToDefaultPosition().done(moonMoon.waddle);
         gotoSection("death");
     }
 
