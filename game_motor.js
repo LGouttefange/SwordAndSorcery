@@ -233,6 +233,9 @@ $(function () {
 
 
     function goToCheckpoint() {
+        inventory.find("EST").refill();
+        inventoryController.refreshActions();
+        inventoryView.refreshView();
         gotoSection(checkPoint);
     }
 
