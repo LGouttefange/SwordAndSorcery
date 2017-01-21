@@ -8,13 +8,14 @@ $(function () {
             this.key = options.key;
             this.name = options.name || "placeholder";
             this.max_use = options.max_use || 0;
+            this.description = options.description;
             this.effect = options.effect || function () {
                 };
-            this.iconPath = this.icon_path(options.iconName) || this.icon_path("placeholder");
+            this.iconPath = Item.icon_path(options.iconName) || Item.icon_path("placeholder");
             this.numberOfUses = options.numberOfUses || options.max_use;
         }
 
-        icon_path(name) {
+        static icon_path(name) {
             return "img/icons/" + name + ".png";
         }
 
@@ -144,7 +145,8 @@ $(function () {
 
     class InventoryView {
         constructor(inventory) {
-            this.view = $("body > #inventory > table");
+            this.view = $("body > #inventory");
+            this.description_elem = this.view.find(".description");
             this.inventory = inventory;
         }
 
@@ -152,11 +154,19 @@ $(function () {
             var inventoryView = this;
             var i = 0;
             $.each(this.inventory, function (index, item) {
-                inventoryView.view.find("td:eq(" + i + ")")
+                inventoryView.view.find(">table td:eq(" + i + ")")
                     .css('background-image', "url(" + item.iconPath + ")")
                     .text(item.numberOfUses);
                 i++;
             })
+        }
+
+        showDescription(item) {
+            this.description_elem.text(item.description);
+        }
+
+        emptyDescription() {
+            this.description_elem.text("");
         }
     }
 
@@ -182,6 +192,7 @@ $(function () {
             this.view.refreshView();
         }
 
+
         refreshState(){
             this.view.refreshView();
             this.refreshActions();
@@ -205,6 +216,14 @@ $(function () {
 
         remove(key) {
             this.inventory = this.inventory.filter(item => item !== key);
+        }
+
+        showDescriptionOfItem(item_key) {
+            this.view.showDescription(this.find(item_key))
+        }
+
+        emptyDescription() {
+            this.view.emptyDescription()
         }
 
     }
@@ -334,7 +353,19 @@ $(function () {
         }
     }
 
-    $("#inventory > table td").click(tryUseSelectedItem)
+    function tryShowDescriptionOfSelectedItem() {
+        var item_key = $(this).data('item_key');
+        if (item_key) {
+            inventoryController.showDescriptionOfItem(item_key);
+        }
+    }
+
+    $("#inventory").find("> table td")
+        .click(tryUseSelectedItem)
+        .mouseenter(tryShowDescriptionOfSelectedItem)
+        .mouseleave(function () {
+            inventoryController.emptyDescription()
+        });
 
 
     function getRandomInt(min, max) {
