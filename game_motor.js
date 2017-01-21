@@ -35,20 +35,11 @@ $(function () {
     class Inventory {
         constructor() {
             this.items = {};
+            var INVENTORY_SIZE = 4;
+            this.size = INVENTORY_SIZE
         }
 
-        add(item) {
-            var key = item.key;
-            this.items[key] = item
-        }
 
-        remove(key) {
-            this.items = this.items.filter(item => item !== key);
-        }
-
-        find(key) {
-            return this.items[key] || null;
-        }
 
     }
 
@@ -157,12 +148,11 @@ $(function () {
 
         refreshView() {
             var inventoryView = this;
-            var items = this.inventory.items;
             var i = 0;
-            $.each(items, function (index, item) {
+            $.each(this.inventory, function (index, item) {
                 inventoryView.view.find("td:eq(" + i + ")")
                     .css('background-image', "url(" + item.iconPath + ")")
-                    .text(item.numberOfUses)
+                    .text(item.numberOfUses);
                 i++;
             })
         }
@@ -176,10 +166,9 @@ $(function () {
 
         refreshActions() {
             var inventoryView = this.view;
-            var items = this.inventory.items;
             var i = 0;
             inventoryView.view.find("td").removeAttr('data-item_key');
-            $.each(items, function (key) {
+            $.each(this.inventory, function (key) {
                 inventoryView.view.find("td:eq(" + i + ")")
                     .attr('data-item_key', key)
                 i++;
@@ -197,24 +186,30 @@ $(function () {
         }
 
         find(key){
-            return this.inventory.items[key] || null;
+            return this.inventory[key] || null;
         }
 
         refill(key) {
             this.find(key).refill();
             this.refreshState();
         }
+
+        add(item) {
+            if (!item instanceof Item)
+                return;
+            var key = item.key;
+            this.inventory[key] = item
+        }
+
+        remove(key) {
+            this.inventory = this.inventory.filter(item => item !== key);
+        }
+
     }
 
-    var inventory = new Inventory();
+    var inventory = {};
 
-    inventory.add(new RefillableItem({
-        key: "EST",
-        name: "Fiole d'Estus",
-        max_use: 5,
-        effect: healPlayer,
-        iconName: "Estus"
-    }));
+
 
     var moonMoon = new MoonMoon();
 
@@ -222,7 +217,18 @@ $(function () {
         moonMoon.appearAndDisappear();
     }
 
-    inventory.add(new Item({
+
+    var inventoryView = new InventoryView(inventory);
+    var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
+
+    inventoryController.add(new RefillableItem({
+        key: "EST",
+        name: "Fiole d'Estus",
+        max_use: 5,
+        effect: healPlayer,
+        iconName: "Estus"
+    }));
+    inventoryController.add(new Item({
         key:"MOON",
         name: "Moon Moon",
         max_use: 99,
@@ -231,10 +237,7 @@ $(function () {
     }));
 
 
-    var inventoryView = new InventoryView(inventory);
-    var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
-    inventoryController.refreshActions();
-    inventoryView.refreshView();
+    inventoryController.refreshState();
 
     var buttons = $('.section button');
     var buttonsWithGo = buttons.filter("button[go]");
