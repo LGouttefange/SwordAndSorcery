@@ -32,15 +32,15 @@ $(function () {
         }
     }
 
-    class Inventory {
-        constructor() {
-            this.items = {};
-            var INVENTORY_SIZE = 4;
-            this.size = INVENTORY_SIZE
+    class QuestItem extends Item {
+        constructor(options) {
+            super(options);
+            this.numberOfUses = "";
         }
 
-
-
+        use() {
+            this.effect()
+        }
     }
 
     function healPlayer() {
@@ -78,7 +78,9 @@ $(function () {
                 .promise();
 
             moonmoon.done(function(){
-                audioPlayers["moonmoon"].play("WOOF");
+                setTimeout(function () {
+                    audioPlayers["moonmoon"].play("WOOF");
+                }, 550);
 
                 this
                 .animate({bottom: "-500px"})
@@ -224,14 +226,15 @@ $(function () {
     inventoryController.add(new RefillableItem({
         key: "EST",
         name: "Fiole d'Estus",
+        description: "Les fioles d'Estus sont liées aux feux de camp. Leur utilisation permet à l'utilisateur de se soigner",
         max_use: 5,
         effect: healPlayer,
         iconName: "Estus"
     }));
-    inventoryController.add(new Item({
+    inventoryController.add(new QuestItem({
         key:"MOON",
         name: "Moon Moon",
-        max_use: 99,
+        description: "Fidèle compagnon à quatre pattes. Joueur et potentiellement bruyant",
         effect: resetMoonMoonPosition,
         iconName: "moonmoon"
     }));
