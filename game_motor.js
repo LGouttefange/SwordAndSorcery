@@ -12,7 +12,7 @@ $(function () {
     $.getScript(scriptPath('functions'));
     $.getScript(classPath('InventoryMVC'));
     $.getScript(classPath('Item'));
-    $.getScript(classPath('Player'));
+    $.getScript(classPath('PlayerMVC'));
     $.getScript(classPath('MoonMoon'));
     $.getScript(classPath('AudioPlayer'));
     $.getScript(scriptPath('actions'));

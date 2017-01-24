@@ -11,14 +11,14 @@ buttonsWithGo.click(function () {
 buttonsWithoutGo.click(function () {
     gotoNextSection();
 });
-$(".section > checkpoint").on('set', newCheckpoint)
+$(".section > checkpoint").on('set', newCheckpoint);
 $("input#input-pseudo").change(updateFalsePseudo);
 $("input#input-real-pseudo")
     .change(updatePseudo)
     .keydown(updatePseudo);
 
 $(".section > action").on("doAction", function () {
-    actions[$(this).attr("name")]();
+    actions[$(this).attr("name")].call(this);
 });
 
 $(".section interaction").click(function () {

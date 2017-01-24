@@ -81,9 +81,6 @@ function gotoNextSection() {
 }
 
 
-function displayLife() {
-    status.find("> .life > .value").text(life);
-}
 
 
 function changeSection(nextSection) {

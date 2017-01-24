@@ -28,7 +28,10 @@ function setPlayerSexToFemale() {
     $("m").hide();
 }
 
+
 function goToCheckpoint() {
+    console.log("DEATH");
+    playerController.healToFull();
     inventoryController.refill('EST');
     inventoryController.refreshState();
     gotoSection(checkPoint);

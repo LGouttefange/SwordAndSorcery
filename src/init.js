@@ -1,7 +1,13 @@
 var inventory = {};
 var moonMoon = new MoonMoon();
+
+var player = new Player({name: 'Bertrand de Sombremort', max_health: 150});
+var playerView = new PlayerView();
+var playerController = new PlayerController({player: player, view: playerView});
+
 var inventoryView = new InventoryView(inventory);
 var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
+
 var audioPlayers = {
     "sound": new AudioPlayer("sound"),
     "music": new AudioPlayer("music"),
@@ -9,7 +15,7 @@ var audioPlayers = {
 };
 
 function healPlayer() {
-    console.log("healed for 40HP");
+    playerController.heal(40);
 }
 
 function resetMoonMoonPosition() {

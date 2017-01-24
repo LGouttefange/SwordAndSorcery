@@ -3,9 +3,19 @@ var actions = {
     "setClassicTheme": setClassicTheme,
     "setGameTheme": setGameTheme,
     "newCheckpoint": newCheckpoint,
-    "die": die
+    "die": die,
+    "updatePlayerNameInView": updatePlayerNameInView,
+    "hit": hit
 };
 
+function hit() {
+    console.log($(this));
+    playerController.hit($(this).data('damage'));
+}
+
+function updatePlayerNameInView() {
+    playerController.setName($("#input-real-pseudo").val());
+}
 
 function updateFalsePseudo() {
     falsePseudo = $("#input-pseudo").val();
@@ -24,7 +34,6 @@ function setGameTheme() {
 
 function newCheckpoint() {
     checkPoint = $(this).closest(".section").attr('id');
-    console.log(checkPoint);
 }
 
 function die() {
