@@ -8,7 +8,7 @@
     src: url("fonts/themes/darksouls/OptimusPrincepsSemiBold.ttf");
 }
 
-html{
+html {
     height: 100vh;
 
 }
@@ -19,7 +19,8 @@ body {
     margin: 0;
     background-image: url("img/themes/desktop/background.jpg");
     background-size: 100% 100%;
-    padding:100px;
+    padding: 100px;
+    overflow: hidden;
 }
 
 h2 {
@@ -170,17 +171,18 @@ body.dark-souls > .section button, body.dark-souls > .section interaction {
 
     font-family: "Dark Souls", "Arial Black", sans-serif;
     background-color: transparent;
-    color:white;
+    color: white;
 }
 
- body.dark-souls > .section input[type="text"] {
+body.dark-souls > .section input[type="text"] {
 
     font-family: "Dark Souls", "Arial Black", sans-serif;
     background-color: transparent;
-    color:white;
+    color: white;
     border: 0;
     border-bottom: 1px solid grey;
 }
+
 body.dark-souls > .section input[type="text"]:focus {
 
     outline: none;
@@ -266,4 +268,43 @@ body.dark-souls > #inventory {
     height: 100%;
     width: 100%;
     background-color: #880000;
+}
+
+#telephone {
+    background: url("img/themes/desktop/phone.png") no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: fixed;
+    right: 0;
+    bottom: -40px;
+    height: 450px;
+    width: 360px;
+}
+
+#telephone > .screen {
+    position: relative;
+    overflow-y: scroll;
+    top: 54px;
+    left: 81px;
+    height: 342px;
+    width: 197px;
+    background: white;
+    color: blue;
+}
+
+#telephone > ::-webkit-scrollbar {
+    width: 10px;
+    background: white;
+    height: 100%;
+}
+
+#telephone > ::-webkit-scrollbar-button {
+    display: none;
+}
+
+#telephone > ::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 50px;
+    background: #777777;
+    border-radius: 20px;
 }
