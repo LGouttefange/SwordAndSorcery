@@ -280,13 +280,15 @@
     <p>
         Que le massac... que le jeu commence !
     </p>
-    <button sound="OK"> Quoi ? comment ça, quel massac... <button>
+    <button sound="OK" onclick="setGameTheme()"> Quoi ? comment ça, quel massac... <button>
 </div>
 
 <div class="section" id="wakeUp">
-    $("body").addClass("dark-souls");
+
     <section class="content">
-        Vous marchez depuis une bonne dizaine de minutes dans ce dédale de couloirs, ce n’est pas vraiment l’endroit le plus rassurant que vous ayez découvert…
+        <p>
+            C'est un endroit ... effrayant. Vous êtes dans une sorte de couloirs gigantesque ou ossements d'aventuriers et flaque de sang jonche le sol, sol sur lequel vous avancez. Cela fait de bonnes minutes que vous déambulez hasardeusement dans ce dédale de pièges mortels et autre abominations.
+        </p>
 
     </section>
 
@@ -294,6 +296,18 @@
 
     <audioplayer name="music">stop</audioplayer>
     <button>Se relever</button>
+</div>
+
+<div>
+    <p>
+        Vous voyez une grande entrée se profiler dans le noir, apparaissant petit à petit de ces ténèbres qui vous empeche de voir quoi que ce soit à plus de 10 mètres. Que faites-vous ?
+    </p>
+    
+    <button go="death">Franchir l'entrée d'un pas fier et déterminé</button>
+        <div class="section">
+            
+        </div>
+    
 </div>
 
 
