@@ -289,11 +289,13 @@ body.dark-souls > #inventory {
     height: 342px;
     width: 197px;
     background: white;
-    color: blue;
+    color: black;
+    padding: 3px;
+    font-family: Arial, sans-serif;
 }
 
 #telephone > ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
     background: white;
     height: 100%;
 }
@@ -307,4 +309,20 @@ body.dark-souls > #inventory {
     height: 50px;
     background: #777777;
     border-radius: 20px;
+}
+
+
+#telephone > .screen > p {
+    clear: both;
+    position: relative;
+    width: 70%;
+    display: block;
+    padding: 5px;
+    background-color: #888;
+    border-radius: 5px;
+}
+
+#telephone > .screen > p.me {
+    float: right;
+    background-color: #92d842;
 }
