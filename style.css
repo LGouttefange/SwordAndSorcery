@@ -289,7 +289,9 @@ body.dark-souls > #inventory {
     height: 342px;
     width: 197px;
     background: white;
-    color: blue;
+    color: black;
+    padding: 3 xp;
+    padding: 3px;
 }
 
 #telephone > ::-webkit-scrollbar {
@@ -307,4 +309,22 @@ body.dark-souls > #inventory {
     height: 50px;
     background: #777777;
     border-radius: 20px;
+}
+
+#telephone > .screen > p {
+    position: relative;
+    width: 70%;
+    display: block;
+    padding: 3px;
+}
+
+#telephone > .screen > p:nth-of-type(odd) {
+    clear: both;
+    left: 0px;
+    background-color: #92d842;
+}
+
+#telephone > .screen > p:nth-of-type(even) {
+    float: right;
+    background-color: #444;
 }
