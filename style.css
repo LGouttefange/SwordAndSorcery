@@ -270,13 +270,17 @@ body.dark-souls > #inventory {
     background-color: #880000;
 }
 
+body.dark-souls > #telephone {
+    display: none;
+}
+
 #telephone {
     background: url("img/themes/desktop/phone.png") no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     position: fixed;
     right: 0;
-    bottom: -40px;
+    bottom: -800px;
     height: 450px;
     width: 360px;
 }
@@ -325,4 +329,8 @@ body.dark-souls > #inventory {
 #telephone > .screen > p.me {
     float: right;
     background-color: #92d842;
+}
+
+.section + .section {
+    display: none;
 }
