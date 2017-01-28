@@ -290,12 +290,12 @@ body.dark-souls > #inventory {
     width: 197px;
     background: white;
     color: black;
-    padding: 3 xp;
     padding: 3px;
+    font-family: Arial, sans-serif;
 }
 
 #telephone > ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
     background: white;
     height: 100%;
 }
@@ -312,19 +312,16 @@ body.dark-souls > #inventory {
 }
 
 #telephone > .screen > p {
+    clear: both;
     position: relative;
     width: 70%;
     display: block;
-    padding: 3px;
+    padding: 5px;
+    background-color: #888;
+    border-radius: 5px;
 }
 
-#telephone > .screen > p:nth-of-type(odd) {
-    clear: both;
-    left: 0px;
-    background-color: #92d842;
-}
-
-#telephone > .screen > p:nth-of-type(even) {
+#telephone > .screen > p.me {
     float: right;
-    background-color: #444;
+    background-color: #92d842;
 }
