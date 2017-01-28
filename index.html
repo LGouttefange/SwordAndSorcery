@@ -186,16 +186,16 @@
         <input class="interaction" id="input-real-pseudo" type="text"/>
     </div>
     <action name="updateFalsePseudo"></action>
-    <button sound="OK">OK</button>
+    <button goto="descriptif" sound="SELECT">Déjà pris ?? Mais on est pas dans un jeu solo là ?</button>
 </div>
 
 
 <div class="section" id="descriptif">
     <section class="content">
-        Donne moi un descriptif de ton personnage (300 mots minimum).
+        Donnez-nous un très très bref descriptif de votre personnage (300 mots minimum).
     </section>
     <div class="interactions">
-        <textarea name="description" id="description">Racontez-moi votre histoire...</textarea>
+        <textarea name="description" id="description">Racontez-nous votre histoire...</textarea>
 
         <div>
             <interaction data-action="loadDescription">Creer une histoire pour moi</interaction>
@@ -203,7 +203,71 @@
         <p>Encore <span id="compteur-mots">300</span> mots !</p>
     </div>
     <action name="updatePlayerNameInView"></action>
-    <button disabled sound="OK">Se relever</button>
+    <button disabled sound="SELECT ">... quelle histoire trépidente ...<button>
+</div>
+
+<div class="section">
+    <p>
+        Eh bien voilà, ce n'était pas si compliqué !
+
+    </p>
+        <button sound="SELECT ">ça dépend pour qui on va dire ...<button>    
+</div>
+
+<div class="section" id="banque">
+    <p>
+        Et pour finir, votre numéro complet, pictogramme et date d'expiration de votre carte de crédit.
+    </p>
+    <p>
+    Le pictogramme est un numéro en général de trois ou quatre chiffre situé à l'arrière de votre carte</p>
+
+    <tr> 
+    <td height="22" align="right" valign="middle">Date d'expiration :</td>
+    <td colspan="2" align="left">
+      <SELECT NAME="CCExpiresMonth" >
+        <OPTION VALUE="" SELECTED>--Mois--
+        <OPTION VALUE="01">Janvier 
+        <OPTION VALUE="02">Février 
+        <OPTION VALUE="03">Mars 
+        <OPTION VALUE="04">Avril
+        <OPTION VALUE="05">Mai
+        <OPTION VALUE="06">Juin
+        <OPTION VALUE="07">Juillet
+        <OPTION VALUE="08">Août
+        <OPTION VALUE="09">Septembre
+        <OPTION VALUE="10">Octobre
+        <OPTION VALUE="11">Novembre
+        <OPTION VALUE="12">Decembre
+      </SELECT> /
+      <SELECT NAME="CCExpiresYear">
+        <OPTION VALUE="" SELECTED>--Année--
+        <OPTION VALUE="04">2017
+        <OPTION VALUE="05">2018
+        <OPTION VALUE="06">2019
+        <OPTION VALUE="07">2020
+        <OPTION VALUE="08">2021
+        <OPTION VALUE="09">2022
+        <OPTION VALUE="10">2023
+        <OPTION VALUE="11">2024
+        <OPTION VALUE="12">2025
+        <OPTION VALUE="13">2026
+        <OPTION VALUE="14">2027
+        <OPTION VALUE="15">2028
+      </SELECT>
+    </td>
+    <p>Pictogramme :</p>
+    <input type="text" />
+  </tr>
+  <tr> 
+    <td height="22" colspan="3" align="left" valign="middle">&nbsp;</td>
+  </tr>
+    <button sound="SELECT "> ... bien tenté mais je refuse ! <button>
+</div>
+
+<div class="section">
+    <p>
+        Vous êtes dur en affaire ...
+    </p>
 </div>
 
 <div class="section" id="wakeUp">
