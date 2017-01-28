@@ -11,7 +11,8 @@ var inventoryController = new InventoryController({inventory: inventory, view: i
 var audioPlayers = {
     "sound": new AudioPlayer("sound"),
     "music": new AudioPlayer("music"),
-    "moonmoon": new AudioPlayer("moonmoon")
+    "moonmoon": new AudioPlayer("moonmoon"),
+    "death": new AudioPlayer("death")
 };
 
 function healPlayer() {

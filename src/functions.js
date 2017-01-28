@@ -80,8 +80,21 @@ function gotoNextSection() {
     changeSection(currentSection.next());
 }
 
+function showDeathBanner() {
 
+    $('#death-banner')
+        .show()
+        .animate({"display": 'block'}, 0)
+        .css("transform", 'scale(1.2)')
+        .animate({opacity: "1"}, 3000)
+        .delay(1000)
+        .animate({opacity: 0}, 3000)
+        .animate({"transform": 'scale(1.2)'}, 0)
+    setTimeout(function () {
 
+        $('#death-banner').css("display", 'none')
+    }, 7000)
+}
 
 function changeSection(nextSection) {
     currentSection.hide();

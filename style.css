@@ -19,7 +19,7 @@ body {
     margin: 0;
     background-image: url("img/themes/desktop/background.jpg");
     background-size: 100% 100%;
-    padding: 100px;
+    padding-top: 100px;
     overflow: hidden;
 }
 
@@ -333,4 +333,26 @@ body.dark-souls > #telephone {
 
 .section + .section {
     display: none;
+}
+
+body.dark-souls > #death-banner {
+    transition: transform 4000ms ease-out;
+    text-align: center;
+    height: 600px;
+    color: red;
+    position: absolute;
+    width: 100vw;
+    background: -webkit-linear-gradient(transparent, black 45%, black 55%, transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent, black 45%, black 55%, transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent, black 45%, black 55%, transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent, black 45%, black 55%, transparent); /* Standard syntax */
+    opacity: 0;
+    display: none;
+}
+
+body.dark-souls > #death-banner > p {
+    position: relative;
+    font-size: 75px;
+    top: 30%;
+
 }

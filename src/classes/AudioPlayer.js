@@ -9,7 +9,7 @@ class AudioPlayer {
 
     static newAudioElement(name) {
         return $("<audio/>",
-            {id: name})
+            {class: name})
             .prependTo($('body'));
 
     }
