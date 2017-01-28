@@ -5,8 +5,17 @@ var actions = {
     "newCheckpoint": newCheckpoint,
     "die": die,
     "updatePlayerNameInView": updatePlayerNameInView,
-    "hit": hit
+    "hit": hit,
+    "showPhone": showPhone,
+    "hidePhone": hidePhone
 };
+function hidePhone() {
+    $("#telephone").animate({bottom: "-800px"}, 1000, 'linear')
+
+}
+function showPhone() {
+    $("#telephone").animate({bottom: "-40px"}, 800)
+}
 
 function hit() {
     console.log($(this));

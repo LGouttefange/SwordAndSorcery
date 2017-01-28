@@ -49,7 +49,6 @@ inventoryController.add(new Item({
     iconName: "moonmoon"
 }));
 
-$(".section +.section").hide();
 setPlayerSexToFemale();
 updateFalsePseudo();
 inventoryController.refreshState();
