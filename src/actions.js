@@ -46,7 +46,11 @@ function newCheckpoint() {
 }
 
 function die() {
-    moonMoon.goToDefaultPosition().done(moonMoon.waddle);
     gotoSection("death");
+    moonMoon.goToDefaultPosition().done(moonMoon.waddle);
+    showDeathBanner();
+    audioPlayers['death'].play('DEATH');
+    gotoSection("death");
+
 }
 

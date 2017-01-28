@@ -11,7 +11,9 @@
 <body>
 
 <div id="death-banner">
-
+    <p>
+        YOU DIED
+    </p>
 </div>
 
 <div id="telephone">
@@ -93,7 +95,7 @@
     <span class="name">Bertrand de Sombremort</span>
     <div class="health-bar">
         <div class="health-bar-fill">
-            
+
         </div>
     </div>
 </div>
@@ -117,6 +119,7 @@
 </div>
 
 <div class="section">
+    <action name="die"></action>
     <p>
     On vous souhaite la bienvenue et on vous remercie de jouer à “Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against the first enemy”
     </p>
@@ -401,7 +404,7 @@
         Vous êtes mort(e) ! C'est balot.
 
     </section>
-    <audioplayer name="sound">DEATH</audioplayer>
+    <audioplayer name="death">DEATH</audioplayer>
     <div class="interactions">
         <interaction data-action="goToCheckpoint" sound="OK">Revenir au dernier feu de camp</interaction>
     </div>

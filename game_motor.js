@@ -8,18 +8,26 @@ $(function () {
         return scriptPath('classes/' + className);
     }
 
-    $.getScript(scriptPath('variables'));
-    $.getScript(scriptPath('functions'));
-    $.getScript(classPath('InventoryMVC'));
-    $.getScript(classPath('Item'));
-    $.getScript(classPath('PlayerMVC'));
-    $.getScript(classPath('MoonMoon'));
-    $.getScript(classPath('AudioPlayer'));
-    $.getScript(scriptPath('actions'));
-    $.getScript(scriptPath('interactions'));
+    var loadScript = function (url) {
+        $.ajax({
+            crossDomain: true,
+            dataType: "script",
+            url: url,
+        })
+    };
+    loadScript(scriptPath('variables'));
 
-    $.getScript(scriptPath('events'));
-    $.getScript(scriptPath('init'));
+    loadScript(scriptPath('functions'));
+    loadScript(classPath('InventoryMVC'));
+    loadScript(classPath('Item'));
+    loadScript(classPath('PlayerMVC'));
+    loadScript(classPath('MoonMoon'));
+    loadScript(classPath('AudioPlayer'));
+    loadScript(scriptPath('actions'));
+    loadScript(scriptPath('interactions'));
+
+    loadScript(scriptPath('events'));
+    loadScript(scriptPath('init'));
 
 
 
