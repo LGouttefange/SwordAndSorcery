@@ -13,6 +13,7 @@ $(function () {
             crossDomain: true,
             dataType: "script",
             url: url,
+            async: false
         })
     };
     loadScript(scriptPath('variables'));
