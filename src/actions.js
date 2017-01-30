@@ -80,11 +80,12 @@ function newCheckpoint() {
 }
 
 function die() {
-    gotoSection("death");
+    if ($(this).closest('.section').attr('id') != "death")
+        gotoSection("death");
+    audioPlayers.music.stop();
     moonMoon.goToDefaultPosition().done(moonMoon.waddle);
     showDeathBanner();
     audioPlayers['death'].play('DEATH');
-    gotoSection("death");
 
 }
 
