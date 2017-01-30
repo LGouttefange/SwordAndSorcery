@@ -38,4 +38,4 @@ $(".section audioplayer").on('play', function () {
 $('*[sound]').click(playAssociatedSound);
 $("body > .section interaction.toggle").click(playSelectSound)
 
-$("#description").keydown(updateWordCountOfDescription);
+$("#description").keyup(updateWordCountOfDescription);
