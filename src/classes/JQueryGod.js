@@ -29,7 +29,9 @@ class JQueryGod {
     };
 
     hit(damage) {
+        damage = Math.floor(damage);
         this.health -= damage;
+        this.showDamageTaken(damage)
     }
 
     healToMax() {
@@ -67,6 +69,13 @@ class JQueryGod {
 
     act() {
         this.ia_chosen_attack()();
+    }
+
+    showDamageTaken(damage) {
+        $("#final-boss").find('.damage').text('-' + damage)
+            .css('top', '100px')
+            .css('opacity', 1)
+            .animate({top: '180px', opacity: 0}, 1000);
     }
 
 }

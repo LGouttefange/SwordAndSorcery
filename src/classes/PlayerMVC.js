@@ -30,6 +30,7 @@ class PlayerController {
         this.refreshHealth();
         if (this.player.health <= 0)
             die();
+        this.view.showDamageTaken(damage);
     }
 
     applyDamage(damage) {
@@ -65,5 +66,12 @@ class PlayerView {
         var view = this.view;
 
         view.find(".health-bar-fill").css('width', health_ratio + "%");
+    }
+
+    showDamageTaken(damage) {
+        this.view.find('.damage').text('-' + damage)
+            .css('top', '0px')
+            .css('opacity', 1)
+            .animate({top: '80px', opacity: 0}, 1000);
     }
 }
