@@ -278,6 +278,8 @@
         </td>
         <p>Pictogramme :</p>
         <input type="text"/>
+        <p>Numéro de carte :</p>
+        <input type="text">
     </tr>
     <tr>
         <td height="22" colspan="3" align="left" valign="middle">&nbsp;</td>
@@ -314,7 +316,7 @@
     <checkpoint></checkpoint>
 
     <audioplayer name="music">stop</audioplayer>
-    <button>Se relever</button>
+    <button sound="SELECT">Se relever</button>
 </div>
 
 <div class="section">
@@ -353,9 +355,9 @@
         Vous sortez votre arme dans un fracas grinçant, quelle discrétion !
         Vous entendez de faibles grognements émanant de l’ombre, autant devant que derrière vous … que faites-vous ?
     </p>
-    <button go="suicide">Vous suicider</button>
-    <button go="hurlement">Hurler le plus fort possible en attaquant</button>
-    <button go="urine">Vous uriner dessus</button>
+    <button sound="OK" go="suicide">Vous suicider</button>
+    <button sound="SELECT" go="hurlement">Hurler le plus fort possible en attaquant</button>
+    <button sound="SELECT" go="urine">Vous uriner dessus</button>
 </div>
 
 <div class="section" id="suicide">
@@ -388,7 +390,7 @@
         magnifiques cuissardes.
 
     </p>
-    <button>...</button>
+    <button sound="SELECT">...</button>
 </div>
 
 <div class="section">
@@ -441,10 +443,10 @@
         sur votre droite de laquelle s’émane des fumées noires faisant penser à des résidus ténébreux que décidez-vous ?
     </p>
     <button go="deliciousCake" sound="SELECT">Se précipiter comme un goinfre sur le gâteau</button>
-    <button go="rightDoor">Se diriger vers la porte de droite...</button>
+    <button go="rightDoor" sound="SELECT">Se diriger vers la porte de droite...</button>
 </div>
 
-<div class="section">
+<div class="section" id="rightDoor">
     <p>
         Vous … êtes sur ? cette porte est vraiment inquiétante … d’autant plus que du sang s’en écoule désormais à
         travers la serrure, du sang ou une drole de matière noire visqueuse et surement potentiellement mortelle …
@@ -452,7 +454,7 @@
     <p>
         alors ?
     </p>
-    <button go="HOLDTHEDOOR">Ouvrir la porte</button>
+    <button go="HOLDTHEDOOR" sound="SELECT">Ouvrir la porte</button>
     <button go="deliciousCake" sound="SELECT">Se laisser guider par la douce odeur du gâteau crémeux</button>
 </div>
 
@@ -463,7 +465,7 @@
         décidez-vous vraiment ??
     </p>
     <button go="forTheWatch" sound="OK">OUVRE CETTE FICHUE PORTE NOM DE ZEUS !</button>
-    <button go="deliciousCake">bon eh bien ... allons manger ce délicieux gâteau</button>
+    <button go="deliciousCake" sound="SELECT">bon eh bien ... allons manger ce délicieux gâteau</button>
 </div>
 
 <div class="section" id="forTheWatch">
@@ -481,7 +483,7 @@
         Vous heurtez une porte en verre … elle vous sépare de votre appétissante récompense ! Vous êtes sonné mais
         reprenez rapidement vos esprits, comment ouvrir cette porte ?
     </p>
-    <button>*moment intense de réflexion*</button>
+    <button sound="SELECT">*moment intense de réflexion*</button>
 </div>
 
 <div class="section" id="porteVerre">
@@ -495,7 +497,7 @@
 
 <div class="section">
     <p>
-        Un digicode, oui.
+        Un clavier tactile, oui.
     </p>
     <button sound="SELECT">O_O</button>
 </div>
@@ -511,7 +513,7 @@
     <p>
         Par le plus grand des hasards, oui.
     </p>
-    <button sound="SELECT">-_-'''''''''''</button>
+    <button sound="SELECT">-_-'</button>
 </div>
 
 <div class="section" id="digicode">
@@ -521,7 +523,7 @@
     <input type="text" id="mdp"/>
     <interaction data-action="checkMDP">Tester le mot de passe</interaction>
     <br/>
-    <button go="embranchement">Retourner à l'embranchement</button>
+    <button go="embranchement" sound="SELECT">Retourner à l'embranchement</button>
     <button go="rageQuit" sound="OK">è_é</button>
 </div>
 
@@ -577,9 +579,9 @@
     <p>
         Le gâteau est là, devant vous ! que faites-vous ?!
     </p>
-    <button go="précipiter">Se précipiter sur le gâteau</button>
-    <button go="prudence">S'avancer doucement vers le gâteau</button>
-    <button go="regarder">Regarder aux alentours</button>
+    <button go="précipiter" sound="OK">Se précipiter sur le gâteau</button>
+    <button go="prudence" sound="SELECT">S'avancer doucement vers le gâteau</button>
+    <button go="regarder" sound="SELECT">Regarder aux alentours</button>
 </div>
 
 <div class="section" id="précipiter">
@@ -616,19 +618,27 @@
     <p>
         Vous êtes à présent devant votre précieux. Que faites-vous ?
     </p>
-    <button go="ARTHOURcouillere">Sortir votre célèbre duo fourchette/cuillère de héros pour bouter ce gâteau et le
-        pousser jusque dans votre estomac
-    </button>
+    <button go="ARTHOURcouillere" sound="SELECT">Sortir votre célèbre duo fourchette/cuillère de héros pour bouter ce gâteau et le pousser jusque dans votre estomac</button>
     <button sound="OK" go="JohnnyDeep">Plonger la tête d’une puissance phénoménale droit dans le gâteau, la bouche
         ouverte pour espérer en attraper le plus possible
     </button>
-    <button go="coward">Vous en aller</button>
+    <button go="coward" sound="SELECT">Vous en aller</button>
+</div>
+
+<div class="section" id="coward">
+    <p>
+        Vous êtes supposer être un guerrier sans peurs et sans reprôches ! 
+    </p>
+    <p>
+        Vous décidez de fuir courageusement devant ce morceau de gâteau.
+    </p>
+    <button go="argh">ARGH ! mon honneur branquignolant me provoque une forte douleur dans la poitrine !</button>
 </div>
 
 <div class="section" id="JohnnyDeep">
     <p>
         ... A quel moment avez-vous penser que ce serait une bonne idée ?
-    </p>x
+    </p>
     <p>
         Vous profitez du peu de nourriture que vous réussissez à avaler mais vous vous fracasser le nez sur le fond du
         plat... vous vous évanouissez et vous noyez littéralement dans l'épaisse, mais néanmoins très goûteuse crème
@@ -746,6 +756,7 @@
 </div>
 
 <div class="section">
+<checkpoint></checkpoint>
     <p>
         Mon dieu ... serais-ce ... lui ?
     </p>
