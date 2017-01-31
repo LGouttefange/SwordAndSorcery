@@ -358,6 +358,10 @@ body.dark-souls > #death-banner > p {
 
 }
 
+#argh{
+    visibility: hidden;
+}
+
 body.dark-souls > #final-boss {
     width: 900px;
     height: 525px;
@@ -365,7 +369,6 @@ body.dark-souls > #final-boss {
     bottom: -550px;
     position: absolute;
     background: url("img/themes/darksouls/demoniaque.png") no-repeat;
-
 }
 
 body.dark-souls > #final-boss > .dialog-box {
