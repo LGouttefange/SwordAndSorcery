@@ -2,8 +2,7 @@ var interactions = {
     "loadDescription": loadDescription,
     "setPlayerSexToMale": setPlayerSexToMale,
     "setPlayerSexToFemale": setPlayerSexToFemale,
-    "goToCheckpoint": goToCheckpoint,
-    "die": die
+    "goToCheckpoint": goToCheckpoint
 };
 
 function loadDescription() {

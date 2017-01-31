@@ -17,7 +17,7 @@ body {
     font-size: 13pt;
     font-family: "Trebuchet MS", Arial, sans-serif;
     margin: 0;
-    background-image: url("img/themes/desktop/background.jpg");
+    background: url("img/themes/desktop/background.jpg");
     background-size: 100% 100%;
     padding-top: 100px;
     overflow: hidden;
@@ -96,7 +96,7 @@ h2 {
     bottom: -500px;
     left: 50px;
     background-repeat: no-repeat;
-    background-image: url(img/moonmoon.png);
+    background: url(img/moonmoon.png);
 }
 
 .section .interactions {
@@ -150,7 +150,7 @@ h2 {
 
 .dark-souls {
     font-family: "Dark Souls", "Arial Black", sans-serif;
-    background-image: url("img/themes/darksouls/background.jpg");
+    background: url("img/themes/darksouls/background.jpg");
     background-size: 100%;
 }
 
@@ -159,7 +159,7 @@ body.dark-souls #status, body.dark-souls #status * {
 }
 
 body.dark-souls > .section {
-    background-image: url("img/themes/darksouls/frame.png");
+    background: url("img/themes/darksouls/frame.png");
     background-size: 100% 100%;
     padding: 20px;
     color: white;
@@ -213,7 +213,7 @@ body.dark-souls > #inventory {
     margin: auto;
     margin-top: 20px;
     max-width: 600px;
-    background-image: url("img/themes/darksouls/frame.png");
+    background: url("img/themes/darksouls/frame.png");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     height: 100px;
@@ -248,7 +248,8 @@ body.dark-souls > #inventory {
     font-style: italic;
 }
 
-#player {
+body.dark-souls > #player {
+    display: block;
     width: 450px;
     height: 80px;
     position: absolute;
@@ -358,7 +359,7 @@ body.dark-souls > #death-banner > p {
 
 }
 
-#argh{
+#argh {
     visibility: hidden;
 }
 
@@ -369,6 +370,10 @@ body.dark-souls > #final-boss {
     bottom: -550px;
     position: absolute;
     background: url("img/themes/darksouls/demoniaque.png") no-repeat;
+}
+
+body > #player {
+    display: none;
 }
 
 body.dark-souls > #final-boss > .dialog-box {

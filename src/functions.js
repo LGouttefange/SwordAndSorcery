@@ -113,8 +113,8 @@ function changeSection(nextSection) {
 }
 
 /*function checkMDP(){
-    mdp = $("#mdp").val();
-    if (mdp == "The cake is a lie" || mdp == "cake is a lie")
-        $("#digicode").add('<button sound="OK" go="porteOuverte""> Ouvrir la porte ! </button>');
+ mdp = $("#mdp").val();
+ if (mdp == "The cake is a lie" || mdp == "cake is a lie")
+ $("#digicode").add('<button sound="OK" go="porteOuverte""> Ouvrir la porte ! </button>');
 
-}*/
+ }*/
