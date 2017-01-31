@@ -41,6 +41,8 @@ function killSeb() {
         .animate({left: "+=10px"})
         .animate({left: "-=10px"})
 
+    gotoNextSection();
+
 }
 
 function hidePhone() {
@@ -85,6 +87,8 @@ function die() {
     audioPlayers.music.stop();
     moonMoon.goToDefaultPosition().done(moonMoon.waddle);
     showDeathBanner();
+    hideSeb();
+    sebastienBenard.healToMax();
     audioPlayers['death'].play('DEATH');
 
 }

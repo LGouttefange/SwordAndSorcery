@@ -8,13 +8,18 @@
     <title>Sword & Sorcery</title>
 </head>
 
-<body>
+<body class="dark-souls">
 
 <div id="death-banner">
     <p>
         YOU DIED
     </p>
 </div>
+
+<div id="final-boss">
+    <div class="dialog-box"></div>
+</div>
+
 
 <div id="telephone">
     <div class="screen">
@@ -101,25 +106,55 @@
 </div>
 
 
+
 <div class="section" id="intro">
     <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
         the first enemy</h2>
     <p>(Tout droits réservés)</p> 
     <p>(Oui c'est long ...)</p> 
     <p>(Non on ne changera pas de nom.)</p>
-    
-    <button sound="SELECT" >Commencer l'aventure !</button>
+    <button sound="SELECT"> Commencer l'aventure !</button>
 </div>
 
 
-<div class="section" >
-    <p>Salut ! </p> 
-    <button sound="SELECT" >Commencer l'aventure !</button>
-    <audioplayer name="music">DS-NamelessSong</audioplayer>
+<!--COMBAT-->
+<div class="section">
+    <p>
+        Un ennemi effroyable se tient devant vous ! Ce n'est d'autre que SEBASTIEN BELZEBUTHNARD !!
+    </p>
+    <action name="showSeb"></action>
+    <button go="FINAL-BATTLE">Je prends mon courage à deux mains et je fonce !</button>
+    <button go="death">Il...il est trop fort...</button>
+
+</div>
+
+
+<div class="section" id="FINAL-BATTLE">
+    <p>
+        Un ennemi effroyable se tient devant vous ! Ce n'est d'autre que SEBASTIEN BELZEBUTHNARD !!
+    </p>
+    <button go="FINAL-BATTLE" data-attack="giffle">Le giffler de manière provocatrice</button>
+    <button go="FINAL-BATTLE" data-attack="giffle_sensuelle">Le giffler de manière sensuelle</button>
+    <button go="FINAL-BATTLE" data-attack="tout_ou_rien">Je donne tout ce que j'ai !</button>
+
 </div>
 
 <div class="section">
-    <action name="die"></action>
+    <p>
+        Vous avez vaincu le grand et puissant SEBASTIEN BELZEBUTHNARD !!
+    </p>
+    <button sound="OK">J'ai gagné !</button>
+
+</div>
+<!--FIN COMBAT-->
+
+<div class="section" >
+    <action name="killSeb"></action>
+    <p>Salut ! </p>
+    <button sound="SELECT" >Commencer l'aventure !</button>
+</div>
+
+<div class="section">
     <p>
     On vous souhaite la bienvenue et on vous remercie de jouer à “Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against the first enemy”
     </p>
@@ -390,7 +425,7 @@
         Vous êtes mort(e) ! C'est balot.
 
     </section>
-    <audioplayer name="death">DEATH</audioplayer>
+    <action name="die"></action>
     <div class="interactions">
         <interaction data-action="goToCheckpoint" sound="OK">Revenir au dernier feu de camp</interaction>
     </div>

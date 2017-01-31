@@ -15,10 +15,22 @@ $(".section > checkpoint").on('set', newCheckpoint);
 $("input#input-pseudo").change(updateFalsePseudo);
 $("input#input-real-pseudo")
     .change(updatePseudo)
-    .keydown(updatePseudo);
+    .keyup(updatePseudo);
 
 $(".section > action").on("doAction", function () {
     actions[$(this).attr("name")].call(this);
+});
+
+$(".section > button[data-attack]").click(function () {
+    $("#final-boss")
+        .animate({right: "-=10px"}, 50)
+        .animate({right: "+=10px"}, 50)
+    attacks[$(this).data('attack')]();
+    if (sebastienBenard.isAlive())
+        sebastienBenard.act();
+    else
+        killSeb();
+
 });
 
 $(".section interaction").click(function () {

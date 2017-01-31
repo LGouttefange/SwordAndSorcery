@@ -20,12 +20,14 @@ $(function () {
 
     loadScript(scriptPath('functions'));
     loadScript(classPath('InventoryMVC'));
+    loadScript(classPath('JQueryGod'));
     loadScript(classPath('Item'));
     loadScript(classPath('PlayerMVC'));
     loadScript(classPath('MoonMoon'));
     loadScript(classPath('AudioPlayer'));
     loadScript(scriptPath('actions'));
     loadScript(scriptPath('interactions'));
+    loadScript(scriptPath('battle'));
 
     loadScript(scriptPath('events'));
     loadScript(scriptPath('init'));

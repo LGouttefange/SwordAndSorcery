@@ -8,6 +8,8 @@ var playerController = new PlayerController({player: player, view: playerView});
 var inventoryView = new InventoryView(inventory);
 var inventoryController = new InventoryController({inventory: inventory, view: inventoryView});
 
+var sebastienBenard = new JQueryGod();
+
 var audioPlayers = {
     "sound": new AudioPlayer("sound"),
     "music": new AudioPlayer("music"),
@@ -16,7 +18,7 @@ var audioPlayers = {
 };
 
 function healPlayer() {
-    playerController.heal(40);
+    playerController.heal(70);
 }
 
 function resetMoonMoonPosition() {
@@ -47,7 +49,7 @@ inventoryController.add(new Item({
     max_use: 5,
     numberOfUses: 2,
     effect: goToCheckpoint,
-    iconName: "moonmoon"
+    iconName: "homeward_bone"
 }));
 
 setPlayerSexToFemale();

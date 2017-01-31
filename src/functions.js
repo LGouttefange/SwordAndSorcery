@@ -96,6 +96,13 @@ function showDeathBanner() {
     }, 7000)
 }
 
+function hideSeb() {
+    audioPlayers.music.stop();
+    $("#final-boss")
+        .animate({bottom: "-500px", opacity: 0}, {duration: 2000, queue: false});
+
+}
+
 function changeSection(nextSection) {
     currentSection.hide();
     currentSection = nextSection;

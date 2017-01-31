@@ -367,3 +367,15 @@ body.dark-souls > #final-boss {
     background: url("img/themes/darksouls/demoniaque.png") no-repeat;
 
 }
+
+body.dark-souls > #final-boss > .dialog-box {
+    font-family: "Dark Souls", sans-serif;
+    position: relative;
+    width: 50%;
+    color: white;
+    top: 400px;
+    text-align: center;
+    margin-left: 12%;
+    margin-bottom: 0px;
+    font-size: 46px;
+}
