@@ -352,6 +352,7 @@ body.dark-souls > #death-banner {
 
 body.dark-souls > #death-banner > p {
     position: relative;
+    font-family: "Dark Souls", "Arial Black", sans-serif;
     font-size: 75px;
     top: 30%;
 
@@ -359,4 +360,13 @@ body.dark-souls > #death-banner > p {
 
 #argh{
     visibility: hidden;
+}
+
+body.dark-souls > #final-boss {
+    width: 900px;
+    height: 525px;
+    right: -200px;
+    bottom: -550px;
+    position: absolute;
+    background: url("img/themes/darksouls/demoniaque.png") no-repeat;
 }

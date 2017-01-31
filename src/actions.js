@@ -7,8 +7,42 @@ var actions = {
     "updatePlayerNameInView": updatePlayerNameInView,
     "hit": hit,
     "showPhone": showPhone,
-    "hidePhone": hidePhone
+    "hidePhone": hidePhone,
+    "showSeb": showSeb,
+    "killSeb": killSeb
 };
+
+function showSeb() {
+    audioPlayers.music.play("FINALBOSS");
+    $("#final-boss").animate({bottom: "-10px"}, 8000);
+}
+
+function killSeb() {
+    audioPlayers.music.stop();
+    audioPlayers.sound.play("VICTORY");
+    $("#final-boss")
+        .animate({bottom: "-500px", opacity: 0}, {duration: 5000, queue: false})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+        .animate({left: "+=10px"})
+        .animate({left: "-=10px"})
+
+}
+
 function hidePhone() {
     $("#telephone").animate({bottom: "-800px"}, 1000, 'linear')
 
@@ -46,11 +80,12 @@ function newCheckpoint() {
 }
 
 function die() {
-    gotoSection("death");
+    if ($(this).closest('.section').attr('id') != "death")
+        gotoSection("death");
+    audioPlayers.music.stop();
     moonMoon.goToDefaultPosition().done(moonMoon.waddle);
     showDeathBanner();
     audioPlayers['death'].play('DEATH');
-    gotoSection("death");
 
 }
 
