@@ -1,11 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose
+        against
+        the first enemy - Jeremy CUESTA-OGER & Loïc GOUTTEFANGEAS</title>
+
     <script src="jquery.js" type="application/javascript"></script>
     <script src="game_motor.js" type="application/javascript"></script>
     <link type="text/css" rel="stylesheet" href="style.css"/>
-    <meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
-    <title>Sword & Sorcery</title>
 </head>
 
 <body>
@@ -91,6 +96,8 @@
 
         <p class="me">Ouais ouais thx m8</p>
 
+        <p>;)</p>
+
     </div>
 </div>
 
@@ -108,69 +115,72 @@
 <div class="section" id="intro">
     <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
         the first enemy</h2>
-    <p>(Tout droits réservés)</p> 
-    <p>(Oui c'est long ...)</p> 
+    <p>(Tout droits réservés)</p>
+    <p>(Oui c'est long ...)</p>
     <p>(Non on ne changera pas de nom.)</p>
 
     <button sound="SELECT">Commencer l'aventure !</button>
 </div>
 
 
-
-<div class="section" >
+<div class="section">
     <p>Salut ! </p>
-    <button sound="SELECT" >Commencer l'aventure !</button>
+    <button sound="SELECT">Commencer l'aventure !</button>
     <audioplayer name="music">DS-NamelessSong</audioplayer>
 </div>
 
 <div class="section">
     <p>
-    On vous souhaite la bienvenue et on vous remercie de jouer à “Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against the first enemy”
+        On vous souhaite la bienvenue et on vous remercie de jouer à “Epic dungeon of the evil necromancer : The game
+        where the mighty warrior is so mighty that he might lose against the first enemy”
     </p>
-    <button sound="SELECT" >Merci !</button>
+    <button sound="SELECT">Merci !</button>
 </div>
 
 <div class="section">
     <p>
-    Avant de commencer cette magnifique et très complète aventure, certains détails vous concernant nous sont nécessaires…
+        Avant de commencer cette magnifique et très complète aventure, certains détails vous concernant nous sont
+        nécessaires…
     </p>
-    <button sound="SELECT" >Euh ... oui ?</button>
+    <button sound="SELECT">Euh ... oui ?</button>
 </div>
 
 <div class="section">
     <p>
-    Rassurez-vous, rien de privé ou d’intime, seulement des éléments indispensables au bon déroulement du jeu 
+        Rassurez-vous, rien de privé ou d’intime, seulement des éléments indispensables au bon déroulement du jeu
     </p>
-    <button sound="SELECT" >Bon et bien si je n'ai pas le choix...</button>
+    <button sound="SELECT">Bon et bien si je n'ai pas le choix...</button>
 </div>
 
 <div class="section">
     <section class="content">
-        Commençons : 
+        Commençons :
 
         es-tu un garcon ou une fille ?
-        Je suis un<m> garcon</m><f>e fille</f>
+        Je suis un
+        <m> garcon</m>
+        <f>e fille</f>
     </section>
     <div class="interactions">
         <interaction class="toggle" data-action="setPlayerSexToMale">Un garcon</interaction>
         <interaction class="toggle active" data-action="setPlayerSexToFemale">Une fille</interaction>
 
     </div>
-    <button sound="OK" >Continuer</button>
+    <button sound="OK">Continuer</button>
 </div>
 
 <div class="section">
     <p>
         Ah...
     </p>
-    <button sound="SELECT" >... comment ça "Ah" ??</button>
+    <button sound="SELECT">... comment ça "Ah" ??</button>
 </div>
 
 <div class="section">
     <p>
-        Bon nous allons faire avec … rien d’intimes on vous l’avez bien dit …     
+        Bon nous allons faire avec … rien d’intimes on vous l’avez bien dit …
     </p>
-    <button sound="SELECT" >ça commence bien ...</button>
+    <button sound="SELECT">ça commence bien ...</button>
 
 </div>
 
@@ -230,49 +240,48 @@
         Et pour finir, votre numéro complet, pictogramme et date d'expiration de votre carte de crédit.
     </p>
     <p>
-    Le pictogramme est un numéro en général de trois ou quatre chiffre situé à l'arrière de votre carte</p>
+        Le pictogramme est un numéro en général de trois ou quatre chiffre situé à l'arrière de votre carte</p>
 
     <tr>
         <td height="22" align="right">Date d'expiration :</td>
-    <td colspan="2" align="left">
-      <SELECT NAME="CCExpiresMonth" >
-          <OPTION SELECTED>--Mois--</OPTION>
-          <OPTION>Janvier</OPTION>
-          <OPTION
-          ">Février </OPTION>
-          <OPTION>Mars</OPTION>
-          <OPTION>Avril</OPTION>
-          <OPTION>Mai</OPTION>
-          <OPTION>Juin</OPTION>
-          <OPTION>Juillet</OPTION>
-          <OPTION>Août</OPTION>
-          <OPTION>Septembre</OPTION>
-          <OPTION>Octobre</OPTION>
-          <OPTION>Novembre</OPTION>
-          <OPTION VALUE="12">Decembre</OPTION>
-      </SELECT> /
-      <SELECT NAME="CCExpiresYear">
-          <OPTION SELECTED>--Année--</OPTION>
-          <OPTION>2017</OPTION>
-          <OPTION>2018</OPTION>
-          <OPTION>2019</OPTION>
-          <OPTION>2020</OPTION>
-          <OPTION>2021</OPTION>
-          <OPTION>2022</OPTION>
-          <OPTION>2023</OPTION>
-          <OPTION>2024</OPTION>
-          <OPTION>2025</OPTION>
-          <OPTION>2026</OPTION>
-          <OPTION>2027</OPTION>
-          <OPTION>2028</OPTION>
-      </SELECT>
-    </td>
-    <p>Pictogramme :</p>
-    <input type="text" />
-  </tr>
-  <tr> 
-    <td height="22" colspan="3" align="left" valign="middle">&nbsp;</td>
-  </tr>
+        <td colspan="2" align="left">
+            <SELECT NAME="CCExpiresMonth">
+                <OPTION SELECTED>--Mois--</OPTION>
+                <OPTION>Janvier</OPTION>
+                <OPTION>Février</OPTION>
+                <OPTION>Mars</OPTION>
+                <OPTION>Avril</OPTION>
+                <OPTION>Mai</OPTION>
+                <OPTION>Juin</OPTION>
+                <OPTION>Juillet</OPTION>
+                <OPTION>Août</OPTION>
+                <OPTION>Septembre</OPTION>
+                <OPTION>Octobre</OPTION>
+                <OPTION>Novembre</OPTION>
+                <OPTION VALUE="12">Decembre</OPTION>
+            </SELECT> /
+            <SELECT NAME="CCExpiresYear">
+                <OPTION SELECTED>--Année--</OPTION>
+                <OPTION>2017</OPTION>
+                <OPTION>2018</OPTION>
+                <OPTION>2019</OPTION>
+                <OPTION>2020</OPTION>
+                <OPTION>2021</OPTION>
+                <OPTION>2022</OPTION>
+                <OPTION>2023</OPTION>
+                <OPTION>2024</OPTION>
+                <OPTION>2025</OPTION>
+                <OPTION>2026</OPTION>
+                <OPTION>2027</OPTION>
+                <OPTION>2028</OPTION>
+            </SELECT>
+        </td>
+        <p>Pictogramme :</p>
+        <input type="text"/>
+    </tr>
+    <tr>
+        <td height="22" colspan="3" align="left" valign="middle">&nbsp;</td>
+    </tr>
 
     <button sound="SELECT"> ... bien tenté mais je refuse !</button>
 
@@ -475,7 +484,7 @@
     <button>*moment intense de réflexion*</button>
 </div>
 
-<div class="section">
+<div class="section" id="porteVerre">
     <p>
         Vous examinez les lieux afin de comprendre comment accéder au gâteau sans passer par cette effroyable porte … Un
         clavier tactile est, fort heureusement et par le plus heureux des hasards, accroché sur le mur à droite de la
@@ -510,10 +519,55 @@
         Saisissez le mot de passe pour accéder au gâteau :
     </p>
     <input type="text" id="mdp"/>
-    <button onclick="checkMDP()">Tester le mot de passe</button>
+    <interaction data-action="checkMDP">Tester le mot de passe</interaction>
     <br/>
     <button go="embranchement">Retourner à l'embranchement</button>
+    <button go="rageQuit" sound="OK">è_é</button>
 </div>
+
+<div class="section" id="rageQuit">
+    <p>
+        Vous avez 1 message non lu !
+    </p>
+
+    <action name="showPhone"></action>
+    <action name="setClassicTheme"></action>
+
+    <button>Oui c'est bon je regarde roohhh</button>
+</div>
+<div class="section">
+    <p>
+        Vous avez 1 message non lu
+    </p>
+    <p>
+        Vous avez 1 message non lu
+    </p>
+
+
+    <button>Oui oui j'ai vu</button>
+</div>
+<div class="section">
+    <p>
+        VOUS AVEZ 1 MESSAGE NON LU!!
+    </p>
+
+
+    <button>Quitte à me faire harceler autant retourner jouer</button>
+</div>
+
+<div class="section">
+    <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
+        the first enemy</h2>
+    <p>(Tout droits réservés)</p>
+    <p>(Oui c'est long ...)</p>
+    <p>(Non on ne changera pas de nom.)</p>
+
+    <action name="hidePhone"></action>
+    <action name="setGameTheme"></action>
+
+    <button go="porteVerre" sound="OK">Continuer l'aventure !</button>
+</div>
+
 
 <div class="section" id="ouverturePorte">
     <checkpoint></checkpoint>
@@ -722,7 +776,7 @@
 
 <div class="section">
     <p>
-        Bon si tu me parle sur ce ton... BON CHANCE ! :)
+        Bon si tu me parles sur ce ton... BONNE CHANCE ! :)
     </p>
     <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux vidéos du monde connu.</button>
     <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux vidéos du monde connu.</button>
@@ -733,7 +787,9 @@
 <!--COMBAT-->
 <div class="section">
     <p>
-        Un ennemi effroyable se tient devant vous ! Ce n'est d'autre que SEBASTIEN BELZEBUTHNARD !!
+        Un ennemi effroyable se tient devant vous ! Ce n'est d'autre que
+        <falsepseudo></falsepseudo>
+        !!
     </p>
     <action name="showSeb"></action>
     <button go="FINAL-BATTLE">Je prends mon courage à deux mains et je fonce !</button>
@@ -744,9 +800,8 @@
 
 <div class="section" id="FINAL-BATTLE">
     <p>
-        Un ennemi effroyable se tient devant vous ! Ce n'est d'autre que
         <falsepseudo></falsepseudo>
-        !!
+        vous fixe d'un regard perçant.
     </p>
     <button go="FINAL-BATTLE" data-attack="giffle">Le giffler de manière provocatrice</button>
     <button go="FINAL-BATTLE" data-attack="giffle_sensuelle">Le giffler de manière sensuelle</button>

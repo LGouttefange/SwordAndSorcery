@@ -112,9 +112,9 @@ function changeSection(nextSection) {
     currentSection.find("checkpoint").trigger("set");
 }
 
-/*function checkMDP(){
+function checkMDP() {
  mdp = $("#mdp").val();
- if (mdp == "The cake is a lie" || mdp == "cake is a lie")
- $("#digicode").add('<button sound="OK" go="porteOuverte""> Ouvrir la porte ! </button>');
+    if (/([T/t]he)?.*[C/c]ake.*[I/i]s.*[A/a].*[L/l]ie.*/g.test(mdp))
+        $("#digicode").append('<button sound="OK" onclick="gotoSection(\'ouverturePorte\')"> Ouvrir la porte ! </button>');
 
- }*/
+}
