@@ -356,3 +356,7 @@ body.dark-souls > #death-banner > p {
     top: 30%;
 
 }
+
+#argh{
+    visibility: hidden;
+}
