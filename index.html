@@ -9,7 +9,6 @@
         the first enemy - Jeremy CUESTA-OGER & Loïc GOUTTEFANGEAS</title>
 
     <script src="jquery.js" type="application/javascript"></script>
-    <script src="game_motor.js" type="application/javascript"></script>
     <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 
@@ -21,6 +20,7 @@
     </p>
 </div>
 <div id="final-boss">
+    <img src="img/themes/darksouls/demoniaque.png" alt="">
     <div class="damage"></div>
     <div class="dialog-box"></div>
 </div>
@@ -31,14 +31,14 @@
         </p>
 
         <p>
-            Ouais … faut avouer que t’es pas hyper doué non plus haha :m
+            Ouais … faut avouer que t’es pas hyper doue non plus haha :m
         </p>
 
         <p class="me">
             Tss… mais ouais t’as raison allez …
         </p>
         <p>
-            Bon sans blague c’est où que tu coinces ?
+            Bon sans blague c’est ou que tu coinces ?
         </p>
         <p class="me">
             Partout :(
@@ -53,7 +53,7 @@
             Fragile.
         </p>
         <p class="me">
-            J’ai pas hyper l’habitude des « die and retry » … je joue à d’autres genre d’habitude …
+            J’ai pas hyper l’habitude des « die and retry » … je joue a d’autres genre d’habitude …
         </p>
         <p>
             Comme ?
@@ -71,14 +71,14 @@
             Hahahaha oui chef ! ;)
         </p>
         <p class="me">Bon au lieu de te foutre de moi et de mes goûts si « particuliers »</p>
-        <p class="me">tu veux pas me dire le code à saisir sur le panneau ? </p>
-        <p class="me">Dans l’endroit où y’a le gâteau, je meurs en boucle c’est chiant je vois pas d’indices…</p>
+        <p class="me">tu veux pas me dire le code a saisir sur le panneau ? </p>
+        <p class="me">Dans l’endroit ou y’a le gâteau, je meurs en boucle c’est chiant je vois pas d’indices…</p>
 
-        <p>Ah oui je me souviens très bien, j’avais galérer aussi haha</p>
+        <p>Ah oui je me souviens tres bien, j’avais galerer aussi haha</p>
 
         <p class="me">ah ben super ! c’est quoi alors ?</p>
 
-        <p>« Démerde- toi »</p>
+        <p>« Demerde- toi »</p>
 
         <p class="me">-_-</p>
 
@@ -86,9 +86,9 @@
         <p>Tout le monde sait ça, surtout les anglophones</p>
 
         <p class="me">O_O</p>
-        <p class="me">Mails ils ont le droit de faire ce genre de références ?</p>
+        <p class="me">Mails ils ont le droit de faire ce genre de references ?</p>
 
-        <p>Aucune idée … et puis au fond on s’en fou non ?</p>
+        <p>Aucune idee … et puis au fond on s’en fou non ?</p>
 
         <p class="me">Ouais c’est vrai … </p>
 
@@ -115,7 +115,7 @@
 <div class="section" id="intro">
     <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
         the first enemy</h2>
-    <p>(Tout droits réservés)</p>
+    <p>(Tout droits reserves)</p>
     <p>(Oui c'est long ...)</p>
     <p>(Non on ne changera pas de nom.)</p>
 
@@ -131,7 +131,7 @@
 
 <div class="section">
     <p>
-        On vous souhaite la bienvenue et on vous remercie de jouer à “Epic dungeon of the evil necromancer : The game
+        On vous souhaite la bienvenue et on vous remercie de jouer a “Epic dungeon of the evil necromancer : The game
         where the mighty warrior is so mighty that he might lose against the first enemy”
     </p>
     <button sound="SELECT">Merci !</button>
@@ -139,15 +139,15 @@
 
 <div class="section">
     <p>
-        Avant de commencer cette magnifique et très complète aventure, certains détails vous concernant nous sont
-        nécessaires…
+        Avant de commencer cette magnifique et tres complete aventure, certains details vous concernant nous sont
+        necessaires…
     </p>
     <button sound="SELECT">Euh ... oui ?</button>
 </div>
 
 <div class="section">
     <p>
-        Rassurez-vous, rien de privé ou d’intime, seulement des éléments indispensables au bon déroulement du jeu
+        Rassurez-vous, rien de prive ou d’intime, seulement des elements indispensables au bon deroulement du jeu
     </p>
     <button sound="SELECT">Bon et bien si je n'ai pas le choix...</button>
 </div>
@@ -186,7 +186,7 @@
 
 <div class="section">
     <section class="content">
-        Comment souhaitez-vous être appelé ?
+        Comment souhaitez-vous être appele ?
     </section>
     <div class="interactions">
         <input class="interaction" id="input-pseudo" type="text" value="Bertrand de Sombremort"/>
@@ -197,7 +197,7 @@
 <div class="section">
     <section class="content">
         <p class="error">
-            Ce pseudo est dejà pris
+            Ce pseudo est deja pris
         </p>
         <p>
             Comment souhaitez-vous être appele ?
@@ -207,13 +207,13 @@
         <input class="interaction" id="input-real-pseudo" type="text"/>
     </div>
     <action name="updateFalsePseudo"></action>
-    <button goto="descriptif" sound="SELECT">Déjà pris ?? Mais on est pas dans un jeu solo là ?</button>
+    <button goto="descriptif" sound="SELECT">Deja pris ?? Mais on est pas dans un jeu solo la ?</button>
 </div>
 
 
 <div class="section" id="descriptif">
     <section class="content">
-        Donnez-nous un très très bref descriptif de votre personnage (300 mots minimum).
+        Donnez-nous un tres tres bref descriptif de votre personnage (300 mots minimum).
     </section>
     <div class="interactions">
         <textarea name="description" id="description">Racontez-nous votre histoire...</textarea>
@@ -224,23 +224,23 @@
         <p>Encore <span id="compteur-mots">300</span> mots !</p>
     </div>
     <action name="updatePlayerNameInView"></action>
-    <button disabled sound="SELECT">... quelle histoire trépidente ...</button>
+    <button disabled sound="SELECT">... quelle histoire trepidente ...</button>
 </div>
 
 <div class="section">
     <p>
-        Eh bien voilà, ce n'était pas si compliqué !
+        Eh bien voila, ce n'etait pas si complique !
 
     </p>
-    <button sound="SELECT">ça dépend pour qui on va dire ...</button>
+    <button sound="SELECT">ça depend pour qui on va dire ...</button>
 </div>
 
 <div class="section" id="banque">
     <p>
-        Et pour finir, votre numéro complet, pictogramme et date d'expiration de votre carte de crédit.
+        Et pour finir, votre numero complet, pictogramme et date d'expiration de votre carte de credit.
     </p>
     <p>
-        Le pictogramme est un numéro en général de trois ou quatre chiffre situé à l'arrière de votre carte</p>
+        Le pictogramme est un numero en general de trois ou quatre chiffre situe a l'arriere de votre carte</p>
 
     <tr>
         <td height="22" align="right">Date d'expiration :</td>
@@ -248,7 +248,7 @@
             <SELECT NAME="CCExpiresMonth">
                 <OPTION SELECTED>--Mois--</OPTION>
                 <OPTION>Janvier</OPTION>
-                <OPTION>Février</OPTION>
+                <OPTION>Fevrier</OPTION>
                 <OPTION>Mars</OPTION>
                 <OPTION>Avril</OPTION>
                 <OPTION>Mai</OPTION>
@@ -261,7 +261,7 @@
                 <OPTION VALUE="12">Decembre</OPTION>
             </SELECT> /
             <SELECT NAME="CCExpiresYear">
-                <OPTION SELECTED>--Année--</OPTION>
+                <OPTION SELECTED>--Annee--</OPTION>
                 <OPTION>2017</OPTION>
                 <OPTION>2018</OPTION>
                 <OPTION>2019</OPTION>
@@ -278,14 +278,14 @@
         </td>
         <p>Pictogramme :</p>
         <input type="text"/>
-        <p>Numéro de carte :</p>
+        <p>Numero de carte :</p>
         <input type="text">
     </tr>
     <tr>
         <td height="22" colspan="3" align="left" valign="middle">&nbsp;</td>
     </tr>
 
-    <button sound="SELECT"> ... bien tenté mais je refuse !</button>
+    <button sound="SELECT"> ... bien tente mais je refuse !</button>
 
 </div>
 
@@ -294,7 +294,7 @@
         Vous êtes dur en affaires ...
     </p>
     <p>
-        Et bien soit, ne pas soutenir les développeurs indépendants est un grand tord, tenez-vous en pour dit !
+        Et bien soit, ne pas soutenir les developpeurs independants est un grand tord, tenez-vous en pour dit !
     </p>
     <p>
         Que le massac... que le jeu commence !
@@ -307,8 +307,8 @@
     <section class="content">
         <p>
             C'est un endroit ... effrayant. Vous êtes dans une sorte de couloirs gigantesque ou ossements d'aventuriers
-            et flaque de sang jonche le sol, sol sur lequel vous avancez. Cela fait de bonnes minutes que vous déambulez
-            hasardeusement dans ce dédale de pièges mortels et autre abominations.
+            et flaque de sang jonche le sol, sol sur lequel vous avancez. Cela fait de bonnes minutes que vous deambulez
+            hasardeusement dans ce dedale de pieges mortels et autre abominations.
         </p>
 
     </section>
@@ -321,18 +321,18 @@
 
 <div class="section">
     <p>
-        Vous voyez une grande entrée se profiler dans le noir, apparaissant petit à petit de ces ténèbres qui vous
-        empeche de voir quoi que ce soit à plus de 10 mètres. Que faites-vous ?
+        Vous voyez une grande entree se profiler dans le noir, apparaissant petit a petit de ces tenebres qui vous
+        empeche de voir quoi que ce soit a plus de 10 metres. Que faites-vous ?
     </p>
 
-    <button sound="OK" go="guillautine">Franchir l'entrée d'un pas fier et déterminé</button>
+    <button sound="OK" go="guillautine">Franchir l'entree d'un pas fier et determine</button>
     <button sound="OK" go="poignard"> Faire demi-tour, cette aventure n'est pas faîtes pour vous finalement...</button>
     <button sound="SELECT" go="sortieArme">Sortir votre arme de votre fourreau</button>
 </div>
 
 <div class="section" id="guillautine">
     <p>
-        Une gigantesque guillautine vient s'abattre sur vous, tranchant délicatement mais de manière efficace, votre
+        Une gigantesque guillautine vient s'abattre sur vous, tranchant delicatement mais de maniere efficace, votre
         être en deux. Propre.
     </p>
 
@@ -341,10 +341,10 @@
 
 <div class="section" id="poignard">
     <p>
-        Vous décidez de fuir courageusement, vous vous retournez, vous contemplez l’obscurité la plus totale...
+        Vous decidez de fuir courageusement, vous vous retournez, vous contemplez l’obscurite la plus totale...
     </p>
     <p>
-        Vous étiez manifestement suivi par une quelconque atrocité qui ne voulait que vous nuire.
+        Vous etiez manifestement suivi par une quelconque atrocite qui ne voulait que vous nuire.
     </p>
 
     <button go="argh">ARGHLBLBLBLBLBL</button>
@@ -352,8 +352,8 @@
 
 <div class="section" id="sortieArme">
     <p>
-        Vous sortez votre arme dans un fracas grinçant, quelle discrétion !
-        Vous entendez de faibles grognements émanant de l’ombre, autant devant que derrière vous … que faites-vous ?
+        Vous sortez votre arme dans un fracas grinçant, quelle discretion !
+        Vous entendez de faibles grognements emanant de l’ombre, autant devant que derriere vous … que faites-vous ?
     </p>
     <button sound="OK" go="suicide">Vous suicider</button>
     <button sound="SELECT" go="hurlement">Hurler le plus fort possible en attaquant</button>
@@ -362,31 +362,31 @@
 
 <div class="section" id="suicide">
     <p>
-        … c’est inattendu mais vous préférez en finir avec la vie… vous vous tranchez donc la carotide avec votre arme
-        de la manière la plus courageuse possible évidemment !
+        … c’est inattendu mais vous preferez en finir avec la vie… vous vous tranchez donc la carotide avec votre arme
+        de la maniere la plus courageuse possible evidemment !
     </p>
     <button go="argh">ARGHLBLBLBLBLBL</button>
 </div>
 
 <div class="section" id="hurlement">
     <p>
-        C’est une technique assez brouillon mais après tout vous êtes un guerrier sans peur et sans reproches, vous êtes
-        courageux ! intrépide et …
+        C’est une technique assez brouillon mais apres tout vous êtes un guerrier sans peur et sans reproches, vous êtes
+        courageux ! intrepide et …
     </p>
     <p>
-        ... vous vous retrouvez avec un gigantesque dard planté entre vos deux omoplates
+        ... vous vous retrouvez avec un gigantesque dard plante entre vos deux omoplates
     </p>
     <button sound="OK" go="argh">ARGHLBLBLBLBLBL</button>
 </div>
 
 <div class="section" id="urine">
     <p>
-        Vous êtes paralysé par la peur, vous sentez que vous pouvez vous faire croquer a tout instant, plutôt que de
-        tenter de fuir, vous décidez de vous uriner dessus de la plus courageuse des manières.
+        Vous êtes paralyse par la peur, vous sentez que vous pouvez vous faire croquer a tout instant, plutôt que de
+        tenter de fuir, vous decidez de vous uriner dessus de la plus courageuse des manieres.
     </p>
     <p>
         Les grognements se sont tus.
-        Les créatures se sont enfuis, probablement effrayé par l’odeur puissante qui s’émane désormais de vos
+        Les creatures se sont enfuis, probablement effraye par l’odeur puissante qui s’emane desormais de vos
         magnifiques cuissardes.
 
     </p>
@@ -396,7 +396,7 @@
 <div class="section">
     <p>
         Vous avez vaincu les bêtes… pas vraiment en fait mais … vous avez vaincus leur envie de vous tuer ! ce n’est
-        déjà pas si mal voyons ! Que souhaitez-vous faire ?
+        deja pas si mal voyons ! Que souhaitez-vous faire ?
     </p>
     <button go="avancer" sound="SELECT">Avancer</button>
     <button go="stay" sound="OK">Attendre d'autres instructions du Maitre du Jeu</button>
@@ -406,31 +406,31 @@
 
 <div class="section" id="dance">
     <p>
-        Vous décidez de vous déhancher sensuellement en plein milieu d’une salle vide, noire et obscure. Malheureusement
-        vous aviez peut-être oublié vous être oublié précédemment. Ainsi c’est en glissant subtilement sur votre flaque
-        d’urine que votre tempe droite finit enfoncer dans votre arme que vous n’aviez pas rengainée.
+        Vous decidez de vous dehancher sensuellement en plein milieu d’une salle vide, noire et obscure. Malheureusement
+        vous aviez peut-être oublie vous être oublie precedemment. Ainsi c’est en glissant subtilement sur votre flaque
+        d’urine que votre tempe droite finit enfoncer dans votre arme que vous n’aviez pas rengainee.
     </p>
     <button go="argh">ARGHLBLBLBLBLBL</button>
 </div>
 
 <div class="section" id="stay">
     <p>
-        Vous ne bougez pas, vous ne voulez pas avancer malgré le sentiment qu’il n’y ait plus de monstres dans la salle
-        suivante. Vous vous tenez là et attendez les prochaines instructions du jeu …
+        Vous ne bougez pas, vous ne voulez pas avancer malgre le sentiment qu’il n’y ait plus de monstres dans la salle
+        suivante. Vous vous tenez la et attendez les prochaines instructions du jeu …
     </p>
     <p>
-        Mais ... vous entendez ce bruit ? C'est le bruit du 4ème mur qui s'effondre :^)
+        Mais ... vous entendez ce bruit ? C'est le bruit du 4eme mur qui s'effondre :o)
     </p>
     <p>
-        Il vient s'écraser sur le haut de votre crâne, brisant ainsi tous les os de votre personnage, c'est pas très
-        beau à voir...
+        Il vient s'ecraser sur le haut de votre crâne, brisant ainsi tous les os de votre personnage, c'est pas tres
+        beau a voir...
     </p>
     <button go="argh">ARGHLBLBLBLBLBL</button>
 </div>
 
 <div class="section" id="avancer">
     <p>
-        Cette salle désormais vaincue, vous pouvez vous aventurer un peu plus loin.
+        Cette salle desormais vaincue, vous pouvez vous aventurer un peu plus loin.
     </p>
     <button sound="SELECT">Parfait !</button>
 </div>
@@ -438,58 +438,58 @@
 <div class="section" id="embranchement">
     <checkpoint></checkpoint>
     <p>
-        Vous apercevez au loin un joli gâteau bien enrobé, bien crémeux, bien décoré et à l’odeur alléchante. Une petite
-        bougie trône sur son dessus et il repose lui-même dans une simple assiette blanche. Il y a également une porte
-        sur votre droite de laquelle s’émane des fumées noires faisant penser à des résidus ténébreux que décidez-vous ?
+        Vous apercevez au loin un joli gâteau bien enrobe, bien cremeux, bien decore et a l’odeur allechante. Une petite
+        bougie trône sur son dessus et il repose lui-même dans une simple assiette blanche. Il y a egalement une porte
+        sur votre droite de laquelle s’emane des fumees noires faisant penser a des residus tenebreux que decidez-vous ?
     </p>
-    <button go="deliciousCake" sound="SELECT">Se précipiter comme un goinfre sur le gâteau</button>
+    <button go="deliciousCake" sound="SELECT">Se precipiter comme un goinfre sur le gâteau</button>
     <button go="rightDoor" sound="SELECT">Se diriger vers la porte de droite...</button>
 </div>
 
 <div class="section" id="rightDoor">
     <p>
-        Vous … êtes sur ? cette porte est vraiment inquiétante … d’autant plus que du sang s’en écoule désormais à
-        travers la serrure, du sang ou une drole de matière noire visqueuse et surement potentiellement mortelle …
+        Vous … êtes sur ? cette porte est vraiment inquietante … d’autant plus que du sang s’en ecoule desormais a
+        travers la serrure, du sang ou une drole de matiere noire visqueuse et surement potentiellement mortelle …
     </p>
     <p>
         alors ?
     </p>
     <button go="HOLDTHEDOOR" sound="SELECT">Ouvrir la porte</button>
-    <button go="deliciousCake" sound="SELECT">Se laisser guider par la douce odeur du gâteau crémeux</button>
+    <button go="deliciousCake" sound="SELECT">Se laisser guider par la douce odeur du gâteau cremeux</button>
 </div>
 
 <div class="section" id="HOLDTHEDOOR">
     <p>
-        Non mais attendez-vous ne semblez pas comprendre, ne pensez pas qu’il y’a quelque chose de caché ou quoi
-        derrière cette porte, une pancarte avec marqué dessus « YOU DIE » ne serait pas vraiment différent … que
-        décidez-vous vraiment ??
+        Non mais attendez-vous ne semblez pas comprendre, ne pensez pas qu’il y’a quelque chose de cache ou quoi
+        derriere cette porte, une pancarte avec marque dessus « YOU DIE » ne serait pas vraiment different … que
+        decidez-vous vraiment ??
     </p>
     <button go="forTheWatch" sound="OK">OUVRE CETTE FICHUE PORTE NOM DE ZEUS !</button>
-    <button go="deliciousCake" sound="SELECT">bon eh bien ... allons manger ce délicieux gâteau</button>
+    <button go="deliciousCake" sound="SELECT">bon eh bien ... allons manger ce delicieux gâteau</button>
 </div>
 
 <div class="section" id="forTheWatch">
     <p>
-        Bon ce n'est VRAIMENT pas faute de vous avoir prévenue...
+        Bon ce n'est VRAIMENT pas faute de vous avoir prevenue...
     </p>
     <button go="argh" sound="OK">Quoi ? mais je pensais que ...</button>
 </div>
 
 <div class="section" id="deliciousCake">
     <p>
-        Ce délicieux gâteau est pour vous ! Vous vous mettez à courir, vous tendez les bras et ...
+        Ce delicieux gâteau est pour vous ! Vous vous mettez a courir, vous tendez les bras et ...
     </p>
     <p>
-        Vous heurtez une porte en verre … elle vous sépare de votre appétissante récompense ! Vous êtes sonné mais
+        Vous heurtez une porte en verre … elle vous separe de votre appetissante recompense ! Vous êtes sonne mais
         reprenez rapidement vos esprits, comment ouvrir cette porte ?
     </p>
-    <button sound="SELECT">*moment intense de réflexion*</button>
+    <button sound="SELECT">*moment intense de reflexion*</button>
 </div>
 
 <div class="section" id="porteVerre">
     <p>
-        Vous examinez les lieux afin de comprendre comment accéder au gâteau sans passer par cette effroyable porte … Un
-        clavier tactile est, fort heureusement et par le plus heureux des hasards, accroché sur le mur à droite de la
+        Vous examinez les lieux afin de comprendre comment acceder au gâteau sans passer par cette effroyable porte … Un
+        clavier tactile est, fort heureusement et par le plus heureux des hasards, accroche sur le mur a droite de la
         porte en verre.
     </p>
     <button sound="SELECT">o_O</button>
@@ -518,13 +518,13 @@
 
 <div class="section" id="digicode">
     <p>
-        Saisissez le mot de passe pour accéder au gâteau :
+        Saisissez le mot de passe pour acceder au gâteau :
     </p>
     <input type="text" id="mdp"/>
     <interaction data-action="checkMDP">Tester le mot de passe</interaction>
     <br/>
-    <button go="embranchement" sound="SELECT">Retourner à l'embranchement</button>
-    <button go="rageQuit" sound="OK">è_é</button>
+    <button go="embranchement" sound="SELECT">Retourner a l'embranchement</button>
+    <button go="rageQuit" sound="OK">e_e</button>
 </div>
 
 <div class="section" id="rageQuit">
@@ -554,13 +554,13 @@
     </p>
 
 
-    <button>Quitte à me faire harceler autant retourner jouer</button>
+    <button>Quitte a me faire harceler autant retourner jouer</button>
 </div>
 
 <div class="section">
     <h2>Epic dungeon of the evil necromancer : The game where the mighty warrior is so mighty that he might lose against
         the first enemy</h2>
-    <p>(Tout droits réservés)</p>
+    <p>(Tout droits reserves)</p>
     <p>(Oui c'est long ...)</p>
     <p>(Non on ne changera pas de nom.)</p>
 
@@ -574,23 +574,23 @@
 <div class="section" id="ouverturePorte">
     <checkpoint></checkpoint>
     <p>
-        VICTOIRE ! La porte s'ouvre et laisse apparaitre un vent parfumé délicieusement chocolaté.
+        VICTOIRE ! La porte s'ouvre et laisse apparaitre un vent parfume delicieusement chocolate.
     </p>
     <p>
-        Le gâteau est là, devant vous ! que faites-vous ?!
+        Le gâteau est la, devant vous ! que faites-vous ?!
     </p>
-    <button go="précipiter" sound="OK">Se précipiter sur le gâteau</button>
+    <button go="precipiter" sound="OK">Se precipiter sur le gâteau</button>
     <button go="prudence" sound="SELECT">S'avancer doucement vers le gâteau</button>
     <button go="regarder" sound="SELECT">Regarder aux alentours</button>
 </div>
 
-<div class="section" id="précipiter">
+<div class="section" id="precipiter">
     <p>
-        Vous vous ruez sur ce délicieux gâteau qui est là sous vos yeux ! il est pour vous, vous sentez déjà son
-        délicieux goût chocolaté parcourir vos papilles ! Vous accélérez vous n’êtes plus qu’as deux mètres du gâteau !
+        Vous vous ruez sur ce delicieux gâteau qui est la sous vos yeux ! il est pour vous, vous sentez deja son
+        delicieux goût chocolate parcourir vos papilles ! Vous accelerez vous n’êtes plus qu’as deux metres du gâteau !
     </p>
     <p>
-        Et vous tombez sur ce dernier. Votre légende s’éteint ainsi : la tête recouverte de crème et une bougie plantée
+        Et vous tombez sur ce dernier. Votre legende s’eteint ainsi : la tête recouverte de creme et une bougie plantee
         dans l’œil...
     </p>
     <button sound="OK" go="argh">ARGHLBLBLBLBLBL</button>
@@ -598,29 +598,31 @@
 
 <div class="section" id="regarder">
     <p>
-        Vous décidez de regarder les alentours pour voir s’il n’y a pas de pièges ou créatures susceptibles de mettre
-        fin à vos jours. Vous apercevez donc rien de bien intéressant si ce n’est une porte sur la gauche du gâteau
+        Vous decidez de regarder les alentours pour voir s’il n’y a pas de pieges ou creatures susceptibles de mettre
+        fin a vos jours. Vous apercevez donc rien de bien interessant si ce n’est une porte sur la gauche du gâteau
         ainsi qu’une sorte d’amas blanchâtre devant le gâteau.
     </p>
-    <button sound="SELECT" go="ouverturePorte">Oulah ça à l'air glissant ...</button>
+    <button sound="SELECT" go="ouverturePorte">Oulah ça a l'air glissant ...</button>
 </div>
 
 <div class="section" id="prudence">
     <p>
-        Vous avancez tout doucement vers ce délicieux gâteau, il vous fait terriblement envie après ces quelques
+        Vous avancez tout doucement vers ce delicieux gâteau, il vous fait terriblement envie apres ces quelques
         aventures vous salivez et avancez droit vers lui en ne regardant que ce dernier. Vous manquez de glisser sur une
-        flaque de crème qui s’étend par terre, heureusement que vous n’avez pas couru, un accident est si vite arrivé…
+        flaque de creme qui s’etend par terre, heureusement que vous n’avez pas couru, un accident est si vite arrive…
     </p>
     <button sound="SELECT">Effectivement... on l'aura compris...</button>
 </div>
 
 <div class="section">
     <p>
-        Vous êtes à présent devant votre précieux. Que faites-vous ?
+        Vous êtes a present devant votre precieux. Que faites-vous ?
     </p>
-    <button go="ARTHOURcouillere" sound="SELECT">Sortir votre célèbre duo fourchette/cuillère de héros pour bouter ce gâteau et le pousser jusque dans votre estomac</button>
-    <button sound="OK" go="JohnnyDeep">Plonger la tête d’une puissance phénoménale droit dans le gâteau, la bouche
-        ouverte pour espérer en attraper le plus possible
+    <button go="ARTHOURcouillere" sound="SELECT">Sortir votre celebre duo fourchette/cuillere de heros pour bouter ce
+        gâteau et le pousser jusque dans votre estomac
+    </button>
+    <button sound="OK" go="JohnnyDeep">Plonger la tête d’une puissance phenomenale droit dans le gâteau, la bouche
+        ouverte pour esperer en attraper le plus possible
     </button>
     <button go="coward" sound="SELECT">Vous en aller</button>
 </div>
@@ -630,19 +632,19 @@
         Vous êtes supposer être un guerrier sans peurs et sans reprôches ! 
     </p>
     <p>
-        Vous décidez de fuir courageusement devant ce morceau de gâteau.
+        Vous decidez de fuir courageusement devant ce morceau de gâteau.
     </p>
     <button go="argh">ARGH ! mon honneur branquignolant me provoque une forte douleur dans la poitrine !</button>
 </div>
 
 <div class="section" id="JohnnyDeep">
     <p>
-        ... A quel moment avez-vous penser que ce serait une bonne idée ?
+        ... A quel moment avez-vous penser que ce serait une bonne idee ?
     </p>
     <p>
-        Vous profitez du peu de nourriture que vous réussissez à avaler mais vous vous fracasser le nez sur le fond du
-        plat... vous vous évanouissez et vous noyez littéralement dans l'épaisse, mais néanmoins très goûteuse crème
-        glacée
+        Vous profitez du peu de nourriture que vous reussissez a avaler mais vous vous fracasser le nez sur le fond du
+        plat... vous vous evanouissez et vous noyez litteralement dans l'epaisse, mais neanmoins tres goûteuse creme
+        glacee
     </p>
     <button go="argh" sound="OK">OMNOMNOMNOMARHLBLBLBLBLBLB</button>
 </div>
@@ -650,39 +652,39 @@
 
 <div class="section" id="ARTHOURcouillere">
     <p>
-        Vous dégainez votre assortiment d’argenterie et vous préparez à les planter dans le gâteau.
+        Vous degainez votre assortiment d’argenterie et vous preparez a les planter dans le gâteau.
     </p>
     <p>
-        Mais le crissement réalisé par la sortie de vos deux « armes » réveil une ignoble créature semblable à un crabe
-        géant qui mesure facilement deux fois votre taille ! le gâteau était un leurre ! un mensonge ! qui l’eut cru ?
-        Le monstre s’en sert désormais de haut de forme... Le temps presse ! vite il faut réagir !
+        Mais le crissement realise par la sortie de vos deux « armes » reveil une ignoble creature semblable a un crabe
+        geant qui mesure facilement deux fois votre taille ! le gâteau etait un leurre ! un mensonge ! qui l’eut cru ?
+        Le monstre s’en sert desormais de haut de forme... Le temps presse ! vite il faut reagir !
     </p>
     <button go="notAGoodIdea">Rengainer votre attirail pour sortir votre arme</button>
-    <button go="LEROYJENKINS">Attaquer là maintenant, courageusement avec votre fourchette et votre couteau</button>
+    <button go="LEROYJENKINS">Attaquer la maintenant, courageusement avec votre fourchette et votre couteau</button>
     <button go="fuite">Vous retourner et fuir</button>
 </div>
 
 <div class="section" id="notAGoodIdea">
     <p>
-        Devant la surprise d’un tel monstre, vous décidez de rengainer, ainsi vous sortez la boite dans laquelle se
+        Devant la surprise d’un tel monstre, vous decidez de rengainer, ainsi vous sortez la boite dans laquelle se
         trouvait votre argenterie, vous nettoyez vos couverts, vous les essuyez un peu avec un petit morceau de tissu,
-        vous les rangez délicatement dans leur emplacement pour être sûr de les retrouver la prochaine fois.
+        vous les rangez delicatement dans leur emplacement pour être sûr de les retrouver la prochaine fois.
     </p>
     <p>
-        Vous vous doutez bien que l’immonde créature affamée n’a pas attendu que vous terminiez votre ménagerie…
+        Vous vous doutez bien que l’immonde creature affamee n’a pas attendu que vous terminiez votre menagerie…
     </p>
     <button go="argh">Fichtre, quel malandrin !</button>
 </div>
 
 <div class="section" id="fuite">
     <p>
-        Vous vous retournez et fuyez ! vous courrez de toutes vos forces quand soudain… cette fichue plaque de crème au
+        Vous vous retournez et fuyez ! vous courrez de toutes vos forces quand soudain… cette fichue plaque de creme au
         sol vous fait tomber !
     </p>
     <p>
-        Vous faites une légère chute qui malgré tout vous casse les deux chevilles, vous fracture la hanche droite, vous
-        arrache les ligaments de votre épaule droite et vous rend borgne grâce à l’intervention de vos couverts qui sont
-        désormais délicatement enfoncés dans vos globes oculaires.
+        Vous faites une legere chute qui malgre tout vous casse les deux chevilles, vous fracture la hanche droite, vous
+        arrache les ligaments de votre epaule droite et vous rend borgne grâce a l’intervention de vos couverts qui sont
+        desormais delicatement enfonces dans vos globes oculaires.
     </p>
     <p>
         Vous croyez entendre le crabe pouffer de rire avant de vous faire avaler.
@@ -692,7 +694,7 @@
 
 <div class="section" id="LEROYJENKINS">
     <p>
-        Ce gâteau est votre ! Crabe ou pas il faut le récupérer ! Vous avancez donc tel un bourrin allant à la baston
+        Ce gâteau est votre ! Crabe ou pas il faut le recuperer ! Vous avancez donc tel un bourrin allant a la baston
         vers votre ennemi !
     </p>
     <button go="surprise" sound="OK">A L'ASSAUUUUULT !</button>
@@ -700,33 +702,33 @@
 
 <div class="section" id="surprise">
     <p>
-        Il ne s’attendait pas à un tel comportement de la part d’une proie … Il esquive habilement votre coup de
-        fourchette et passe derrière vous. Que faites-vous ?
+        Il ne s’attendait pas a un tel comportement de la part d’une proie … Il esquive habilement votre coup de
+        fourchette et passe derriere vous. Que faites-vous ?
     </p>
     <button go="continue">Continuer de l'attaquer</button>
-    <button go="porteSortie">Vous précipitez vers la porte de sortie</button>
+    <button go="porteSortie">Vous precipitez vers la porte de sortie</button>
     <button go="wtf">L'intimider</button>
 </div>
 
 <div class="section" id="porteSortie">
     <p>
-        « Cette porte est mon unique chance ! » pensez-vous… vous réussissez bravement à vous extirper du combat et
-        arrivez dans cette pièce.
+        « Cette porte est mon unique chance ! » pensez-vous… vous reussissez bravement a vous extirper du combat et
+        arrivez dans cette piece.
     </p>
     <p>
-        Vous entendez la porte se fermer violemment, vous êtes seul dans le noir, enfermé dans une salle vide et sans
-        rien à manger … même pas ce succulent gâteau dont on sent encore le parfum à travers quelques brises qui
-        réussissent à passer la porte.
+        Vous entendez la porte se fermer violemment, vous êtes seul dans le noir, enferme dans une salle vide et sans
+        rien a manger … même pas ce succulent gâteau dont on sent encore le parfum a travers quelques brises qui
+        reussissent a passer la porte.
     </p>
     <button sound="OK" go="argh"> Mais ... mais non ça marche pas comme ç...</button>
 </div>
 
 <div class="section" id="wtf">
     <p>
-        Vous hurlez d’une manière assez grotesque mais néanmoins virile ! malgré tout le crabe ne semble pas intimidé
-        par un adversaire mesurant la moitié de sa taille armé d’une fourchette et d’une cuillère…
+        Vous hurlez d’une maniere assez grotesque mais neanmoins virile ! malgre tout le crabe ne semble pas intimide
+        par un adversaire mesurant la moitie de sa taille arme d’une fourchette et d’une cuillere…
     </p>
-    <button go="surprise">Bon j'aurai au moins essayé...</button>
+    <button go="surprise">Bon j'aurai au moins essaye...</button>
 </div>
 
 <div class="section" id="continue">
@@ -735,22 +737,22 @@
         monstrueux !
     </p>
     <p>
-        Un hurlement suffisamment puissant pour attirer aux alentours toutes les bêtes qui rodent dans l'obscurité ...
+        Un hurlement suffisamment puissant pour attirer aux alentours toutes les bêtes qui rodent dans l'obscurite ...
     </p>
     <button>S'emparer du gâteau et quitter cet endroit maudit</button>
 </div>
 
 <div class="section">
     <p>
-        Vous tendez les mains, enfin ce gâteau est pour vous ! Il est là il n'attend qu'à être mangé !
+        Vous tendez les mains, enfin ce gâteau est pour vous ! Il est la il n'attend qu'a être mange !
     </p>
     <button sound="SELECT">A TABLE !</button>
 </div>
 
 <div class="section">
     <p>
-        Vous rapprochez votre instrument, vous n'êtes plus qu'à quelques centimètres de planter votre cuillère dans
-        cette douce robe crémeuse parsemé de chantilly, de boules de glâces, de métal, de côtes de maille et de ...
+        Vous rapprochez votre instrument, vous n'êtes plus qu'a quelques centimetres de planter votre cuillere dans
+        cette douce robe cremeuse parseme de chantilly, de boules de glâces, de metal, de côtes de maille et de ...
     </p>
     <button>Hein ? quoi ?</button>
 </div>
@@ -765,33 +767,33 @@
 
 <div class="section">
     <p>
-        Je n'avais jamais envisagé la possibilité de le rencontrer ici !!
+        Je n'avais jamais envisage la possibilite de le rencontrer ici !!
     </p>
     <button>Mais tu vas parler oui ?? c'est de qui que tu parles ??</button>
 </div>
 
 <div class="section">
     <p>
-        c'est contraire à tous les principes des jeux les plus élémentaires... un être si parfait, si beau, si puissant
+        c'est contraire a tous les principes des jeux les plus elementaires... un être si parfait, si beau, si puissant
         ... et pourtant si diabolique ! Je ne sais que faire ...
     </p>
-    <button>Mais ... je comprends plus rien, c'est pas MON aventure à la base ?</button>
+    <button>Mais ... je comprends plus rien, c'est pas MON aventure a la base ?</button>
 </div>
 
 <div class="section">
     <p>
         Ah si c'est vrai.
     </p>
-    <button>Quel Maitre du jeu de qualité ! -_-</button>
+    <button>Quel Maitre du jeu de qualite ! -_-</button>
 </div>
 
 <div class="section">
     <p>
         Bon si tu me parles sur ce ton... BONNE CHANCE ! :)
     </p>
-    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux vidéos du monde connu.</button>
-    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux vidéos du monde connu.</button>
-    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux vidéos du monde connu.</button>
+    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux videos du monde connu.</button>
+    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux videos du monde connu.</button>
+    <button>Combattre le boss le plus puissant et le plus charismatique de tous les jeux videos du monde connu.</button>
 
 </div>
 
@@ -803,7 +805,7 @@
         !!
     </p>
     <action name="showSeb"></action>
-    <button go="FINAL-BATTLE">Je prends mon courage à deux mains et je fonce !</button>
+    <button go="FINAL-BATTLE">Je prends mon courage a deux mains et je fonce !</button>
     <button go="death">Il...il est trop fort...</button>
 
 </div>
@@ -814,8 +816,8 @@
         <falsepseudo></falsepseudo>
         vous fixe d'un regard perçant.
     </p>
-    <button go="FINAL-BATTLE" data-attack="giffle">Le giffler de manière provocatrice</button>
-    <button go="FINAL-BATTLE" data-attack="giffle_sensuelle">Le giffler de manière sensuelle</button>
+    <button go="FINAL-BATTLE" data-attack="giffle">Le giffler de maniere provocatrice</button>
+    <button go="FINAL-BATTLE" data-attack="giffle_sensuelle">Le giffler de maniere sensuelle</button>
     <button go="FINAL-BATTLE" data-attack="tout_ou_rien">Je donne tout ce que j'ai !</button>
 
 </div>
@@ -826,7 +828,7 @@
         <falsepseudo></falsepseudo>
         !!
     </p>
-    <button sound="OK">J'ai gagné !</button>
+    <button sound="OK">J'ai gagne !</button>
 
 </div>
 <!--FIN COMBAT-->
@@ -870,6 +872,7 @@
     <action name="die"></action>
 </div>
 
+<script src="app.js" type="application/javascript"></script>
 </body>
 
 </html>

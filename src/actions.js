@@ -15,7 +15,7 @@ var actions = {
 function showSeb() {
     audioPlayers.music.play("FINALBOSS");
     $("#final-boss")
-        .css('background-image', 'url(img/themes/darksouls/demoniaque.png)')
+        .css('opacity', 100)
         .animate({bottom: "-10px"}, 8000);
 }
 

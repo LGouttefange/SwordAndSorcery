@@ -1,0 +1,16 @@
+{
+  "name": "swordandsorcery",
+  "version": "0.0.1",
+  "devDependencies": {
+    "browserify": "latest",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "brfs": "^1.6.1",
+    "jquery": "^3.3.1",
+    "vinyl-buffer": "^1.0.1"
+  }
+}

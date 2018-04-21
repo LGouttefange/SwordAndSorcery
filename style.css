@@ -23,6 +23,9 @@ body {
     overflow: hidden;
 }
 
+body #final-boss {
+    display: none;
+}
 h2 {
     margin-top: 0px;
     font-weight: bold;
@@ -368,7 +371,7 @@ body.dark-souls > #final-boss {
     right: -200px;
     bottom: -550px;
     position: absolute;
-    background: url("img/themes/darksouls/demoniaque.png") no-repeat;
+    display: block;
 }
 
 body > #player {
@@ -377,10 +380,11 @@ body > #player {
 
 body.dark-souls > #final-boss > .dialog-box {
     font-family: "Dark Souls", sans-serif;
-    position: relative;
+    position: absolute;
     width: 50%;
     color: white;
-    top: 400px;
+    left: -100px;
+    top: 00px;
     text-align: center;
     margin-left: 12%;
     margin-bottom: 0px;
